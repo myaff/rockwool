@@ -1,0 +1,89 @@
+.field {
+  margin-bottom: 1.25rem;
+  &__label {
+    display: block;
+  }
+  &__input {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1.25rem;
+    color: $black;
+    
+    font: normal 1rem/1.5 $font-base;
+    vertical-align: middle;
+    background: transparent;
+    border: 1px solid currentColor;
+    
+    {hover-focus-active} {
+      outline: 0;
+    }
+    
+    textarea& {
+      min-height: 150px;
+    }
+    
+    .has-error & {
+      border-color: #ff0000;
+    }
+    
+  }
+  &__placeholder {
+    font: normal 1rem/1.5 $font-base;
+    vertical-align: middle;
+    absolute();
+    top: calc(0.75rem + 1px);
+    left: calc(1.25rem + 1px);
+    transition: opacity 0.3s, transform 0.3s;
+    cursor: text;
+    
+    .has-focus &,
+    .has-value & {
+      opacity: 0;
+      transform: translateX(10%);
+    }
+  }
+  
+  &__clear {
+    color: inherit;
+    font-size: 12px;
+    padding: 6px;
+    
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    
+    absolute(0px);
+    right: 0;
+    
+    {hover-focus-active} {
+      box-shadow: none;
+      outline: none;
+    }
+    
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    
+    .has-value & {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
+
+.form {
+  &--inline {
+    flexy(flex-start, flex-end);
+  }
+  &--inline &__btn {
+    flex: 0 0 auto;
+  }
+  &--inline &__field {
+    flex: 1 1 auto;
+    margin-bottom: 1.25rem;
+    & + .form__field {
+      margin-left: 1.25rem;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+extends template
+
+prepend page
+  - var layout = 'dummy';
+  - var currentPage = 'dummy';
+
+block content
+  .page.page--dummy
+    .l-container
+      .l-flex-noBottom
+        .l-col-7
+          .dummy-main
+            .dummy-main__heading Что важнее
+            .dummy-main__choise
+              .dummy-main__img
+                img.img(src="/build/img/layers-1.png", alt="")
+                .title толщина<br/> слоя
+              .dummy-main__q ?
+              .dummy-main__img
+                img.img(src="/build/img/layers-2.png", alt="")
+                .title количество <br/>слоев
+            .dummy-main__text
+              .text-wrapper
+                .title 1&nbsp;мая Узнайте правильный ответ 
+                .text Приходите за покупками Rockwool<br/> СКАНДИК 100/150&nbsp;мм
+              .text-wrapper
+                .subtitle выигрывайте призы
+      .dummy-timer.card.card--big
+        .dummy-timer__heading до старта акции осталось:
+        .dummy-timer__time#timer(data-final="01-05-2018")

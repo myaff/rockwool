@@ -1,0 +1,107 @@
+{
+"socials": [
+  {"type": "vk", "text": "Vkontakte", "icon": "vk", "url": "#"},
+  {"type": "fb", "text": "Facebook", "icon": "fb", "url": "#"},
+  {"type": "tw", "text": "Twitter", "icon": "tw", "url": "#"}
+],
+"pages": [
+  {
+    "url": "prizes.html",
+    "text": "призы",
+    "isActive": false
+  },
+  {
+    "url": "winners.html",
+    "text": "победители",
+    "isActive": false
+  },
+  {
+    "url": "faq.html",
+    "text": "FAQ",
+    "isActive": false
+  }
+],
+"prizes": [
+  {
+    "title": "гарантированный приз",
+    "img": "/build/img/prizes/prize-1.png",
+    "name": "Онлайн&#8209;урок «Утепляемся&nbsp;правильно»",
+    "showOnHome": true
+  },
+  {
+    "title": "Приз месяца",
+    "img": "/build/img/prizes/prize-2.png",
+    "name": "Грили&#8209;барбекю",
+    "showOnHome": false
+  },
+  {
+    "title": "Приз месяца",
+    "img": "/build/img/prizes/prize-3.png",
+    "name": "Продукты ROCKWOOL",
+    "showOnHome": false
+  },
+  {
+    "title": "Приз месяца",
+    "img": "/build/img/prizes/prize-4.png",
+    "name": "Пылесос",
+    "showOnHome": true
+  },
+  {
+    "title": "Приз месяца",
+    "img": "/build/img/prizes/prize-5.png",
+    "name": "Пакет спутникового ТВ",
+    "showOnHome": false
+  },
+  {
+    "title": "Главный приз",
+    "img": "/build/img/prizes/prize-6.png",
+    "name": "Пачка денег толщиной 100&nbsp;мм*",
+    "showOnHome": true
+  }
+],
+"steps": [
+  {
+    "title": "Найдите купон",
+    "desc": "в ПРОДУКЦИИ Rockwool <br/><b>СКАНДИК 100/150&nbsp;мм</b>"
+  },
+  {
+    "title": "зарегистрируйте",
+    "desc": "код на&nbsp;сайте и&nbsp;получите <b>гарантированный приз</b>"
+  },
+  {
+    "title": "Участвуйте",
+    "desc": "в&nbsp;розыгрыше призов"
+  },
+  {
+    "title": "выиграйте",
+    "desc": "главный приз — <br/><b>пачку денег толщиной 100&nbsp;мм*</b>"
+  }
+],
+"codes": [
+  {
+    "code": "403 678 087",
+    "state": "success",
+    "date": "15.04.18"
+  },
+  {
+    "code": "214 576 795",
+    "state": "waiting",
+    "date": "11.04.18"
+  },
+  {
+    "code": "325 346 353",
+    "state": "error",
+    "date": "09.04.18"
+  },
+  {
+    "code": "123 456 789",
+    "state": "success",
+    "date": "02.04.18"
+  }
+],
+"states": {
+  "success": "Код зарегистрированн",
+  "waiting": "Код ожидает подтверждения",
+  "error": "Некорректный код"
+}
+}

@@ -1,0 +1,33 @@
+.main-nav {
+  &__list {
+    list-style: none;
+    margin: 0 -15px;
+    padding: 0;
+    flexy(space-between, center);
+  }
+  &__item {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    display: block;
+    color: $white;
+    text-align: center;
+    font: bold 15px/1 $font-base;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 1em 7px;
+    white-space: nowrap;
+    
+    @media $desktop {
+      &:hover {
+        color: $white;
+      }
+    }
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+}

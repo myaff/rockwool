@@ -1,0 +1,86 @@
+.btn {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px 2rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  box-shadow: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  
+  {hover-focus-acitve} {
+    outline: 0;
+  }
+  
+  // **** sizes ****
+  &--small {
+    font-size: 15px;
+    padding: 11px 2rem 12px;
+    min-width: 160px;
+  }
+  &--big {
+    padding: 20px;
+  }
+  
+  // **** themes  ****
+  &--primary {
+    color: $white;
+    background: $primary;
+    border-color: transparent;
+    
+    {hover-focus-active} {
+      color: $white;
+      background: darken($primary, 20%);
+      border-color: transparent;
+    }
+  }
+  &--secondary {
+    color: $black;
+    background: $secondary;
+    border-color: transparent;
+    
+    {hover-focus-active} {
+      color: $black;
+      border-color: currentColor;
+      background: transparent;
+    }
+  }
+  &--primary-outline {
+    color: $primary;
+    background: transparent;
+    border-color: $primary;
+    
+    {hover-focus-active} {
+      color: $white;
+      background: $primary;
+    }
+  }
+  &--secondary-outline {
+    color: $black;
+    background: transparent;
+    border-color: $black;
+    
+    {hover-focus-active} {
+      color: $white;
+      background: $black;
+    }
+  }
+  
+  &--plain {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 14px;
+    min-width: 0;
+    
+    background: transparent;
+    color: inherit;
+  }
+  
+}

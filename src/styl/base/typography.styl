@@ -1,0 +1,105 @@
+$text-color = $black;
+$link-color = $text-color;
+$link-color--active = $link-color;
+
+html, body {
+  font-size: $font-size-base;
+  line-height: 1.5;
+  font-family: $font-base;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  
+  {hover-focus-active} {
+    color: $link-color--active;
+    outline: 0;
+  }
+}
+
+.tp-heading {
+  &--medium {
+    font: italic 500 38px/1 $font-accent;
+  }
+  &--small {
+    font: bold 16px/1.25 $font-base;
+    text-transform: uppercase;
+  }
+}
+.tp-body {
+  &--big {
+    font-family: $font-accent;
+    font-size: 20px;
+  }
+  &--medium {
+    font-size: 18px;
+  }
+  &--base {
+    font-size: $font-size-base;
+    line-height: 1.5;
+  }
+  &--small {
+    font-size: 14px;
+  }
+  &--smaller {
+    font-size: 13px;
+  }
+}
+b, strong {
+  font-weight: bold;
+}
+.tp-text {
+  for $align in (left right center) {
+    &--{$align} {
+      text-align: $align;
+    }
+  }
+  &--light {
+    opacity: 0.8;
+  }
+  &--lighter {
+    opacity: 0.6;
+  }
+  &--lightest {
+    opacity: 0.5;
+  }
+  &--upper {
+    text-transform: uppercase;
+  }
+  &--lower {
+    text-transform: lowercase;
+  }
+  &--truncate {
+    truncate();
+  }
+  &--nowrp {
+    white-space: nowrap;
+  }
+}
+
+p {
+  margin: 1em 0;
+  no-childs-margin();
+}
+
+.img-circle {
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  img {
+    display: block;
+  }
+}
+
+.rounded {
+  border-radius: $border-radius-base;
+}
+
+.icon-string {
+  &.icon,
+  &.text {
+    vertical-align: middle;
+  }
+}

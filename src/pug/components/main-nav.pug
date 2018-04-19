@@ -1,0 +1,13 @@
+nav.main-nav
+  ul.main-nav__list
+    each page in pages
+      li.main-nav__item
+        a.main-nav__link(href=page.url, class=page.isActive ? "" : "disabled") !{page.text}
+    if isLoggedin
+      li.main-nav__item
+        a.main-nav__link.disabled(href="profile.html") личный кабинет
+    else
+      li.main-nav__item
+        a.main-nav__link.disabled(href="rules.html") правила акции
+      li.main-nav__item
+        a.main-nav__link.disabled(href="#") вход в&nbsp;личный кабинет

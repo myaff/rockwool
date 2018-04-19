@@ -1,0 +1,67 @@
+.header {
+  fixed(0px, 0px);
+  width: 100%;
+  background: $primary;
+  z-index: 9;
+  box-shadow: 0 0 50px rgba(#000, 1);
+  
+  &__content {
+    padding: 12px 0;
+    flexy(space-between, center);
+  }
+  
+  &__logo {
+    @media $desktop {
+      margin-right: 100px;
+    }
+    img {
+      display: block;
+    }
+  }
+  
+  &__menu {
+    @media $desktop {
+      flex: 1 1 510px;
+    }
+  }
+  
+  .layout--dummy & {
+    @media $desktop {
+      display: none;
+    }
+  }
+}
+
+.header-screen {
+  background: url("../img/main.png") bottom center no-repeat;
+  background-size: cover;
+  .layout--dummy & {
+    background: url("../img/main-dummy.png") bottom center no-repeat;
+    background-size: cover;
+  }
+  
+  &__content {  
+    padding-top: 60px;
+    height: 553px;
+    .layout--dummy & {
+      height: 460px;
+    }
+  }
+  &__img {
+    absolute();
+    right: 0;
+    bottom: -80px;
+    width: 360px;
+    z-index: 3;
+    
+    .layout--dummy & {
+      width: 440px;
+      bottom: -260px;
+    }
+    
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
