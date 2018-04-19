@@ -5,61 +5,112 @@
 }
 
 .dummy-main {
+  @media $mobile {
+    margin-top: (60*100/750)vw;
+  }
   &__heading {
     font: bold 62px $font-base;
     color: $secondary-darker;
     text-align: center;
     text-transform: uppercase;
+    @media $mobile {
+      font-size: (70*100/750)vw;
+    }
   }
   &__choise {
     flexy(center, flex-end);
     color: $secondary-darker;
     margin: 0 0 1.5rem;
+    @media $mobile {
+      justify-content: space-around;
+      align-items: center;
+      margin: 2rem 0;
+    }
   }
   &__img {
     .img {
       display: block;
       size(55px, auto);
       margin: 0 auto 0.5rem;
+      @media $mobile {
+        width: (120*100/750)vw;
+      }
     }
     .title {
       font: bold 22px/1 $font-base;
+      @media $mobile {
+        font-size: (38*100/750)vw;
+        text-align: center;
+      }
     }
     
     &:first-child {
       text-align: right;
+      @media $mobile {
+        text-align: center;
+      }
     }
   }
   &__q {
     font: bold 136px/0.7 $font-base;
+    @media $mobile {
+      font-size: (180*100/750)vw;
+    }
   }
   &__text {
     flexy(flex-start, flex-start);
     text-transform: uppercase;
+    @media $mobile {
+      display: block;
+      text-align: center;
+    }
     
     .text-wrapper:first-child {
       flex: 0 0 auto;
       margin-right: 30px;
       text-align: right;
+      @media $mobile {
+        margin-right: 0;
+        text-align: center;
+      }
     }
     
     .title {
       font: 900 15px $font-base;
       color: $black;
       margin-bottom: 4px;
+      @media $mobile {
+        font-size: (50*100/750)vw;
+        line-height: 1.1;
+        letter-spacing: initial;
+        margin-bottom: 2rem;
+      }
     }
     .subtitle {
       font: 900 24px/1 $font-base;
       color: $primary;
+      @media $mobile {
+        font-size: (40*100/750)vw;
+        font-weight: bold;
+        margin-top: 1.5rem;
+      }
     }
     .text {
       font: normal 11px/13px $font-base;
+      @media $mobile {
+        font-size: (35*100/750)vw;
+        line-height: 1.15;
+        font-weight: bold;
+      }
     }
   }
 }
 
 .dummy-timer {
   margin: 4rem 0 7.5rem;
+  @media $mobile {
+    margin: (50*100/750)vw 0 (100*100/750)vw;
+  }
   
   &__heading {
     font: bold 30px/1 $font-base;
@@ -68,7 +119,7 @@
     text-align: center;
     margin-bottom: 2rem;
     @media $mobile {
-      font-size: 40px;
+      font-size: (40*100/750)vw;
       line-height: 1.25;
     }
   }
@@ -96,14 +147,14 @@
     .num {
       font: bold 150px/0.7 $font-base;
       @media $mobile {
-        font-size: 100px;
+        font-size: (100*100/750)vw;
       }
     }
     .title {
       font: bold 22px $font-base;
       margin-top: 1rem;
       @media $mobile {
-        font-size: 35px;
+        font-size: (35*100/750)vw;
       }
     }
   }

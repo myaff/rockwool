@@ -3,7 +3,13 @@
   width: 100%;
   background: $primary;
   z-index: 9;
-  box-shadow: 0 0 50px rgba(#000, 1);
+  box-shadow: 0 0 50px rgba(#000, 0.8);
+  
+  .layout--dummy & {
+    @media $mobile {
+      background: url("../img/main-mobile.png") top center no-repeat;
+    }
+  }
   
   &__content {
     padding: 12px 0;
@@ -23,6 +29,9 @@
     @media $desktop {
       flex: 1 1 510px;
     }
+    @media $mobile {
+      display: none;
+    }
   }
   
   .layout--dummy & {
@@ -38,6 +47,10 @@
   .layout--dummy & {
     background: url("../img/main-dummy.png") bottom center no-repeat;
     background-size: cover;
+    @media $mobile {
+      background: url("../img/main-mobile.png") bottom center no-repeat;
+      background-size: cover;
+    }
   }
   
   &__content {  
@@ -45,6 +58,9 @@
     height: 553px;
     .layout--dummy & {
       height: 460px;
+      @media $mobile {
+        height: 78.67vw;
+      }
     }
   }
   &__img {
@@ -57,6 +73,14 @@
     .layout--dummy & {
       width: 440px;
       bottom: -260px;
+      @media screen and (max-width: 990px) {
+        width: (300*100/750)vw;
+        bottom: (-200*100/750)vw;
+      }
+      @media $mobile {
+        width: 37.33vw ;
+        bottom: -5.33vw ;
+      }
     }
     
     img {
