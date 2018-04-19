@@ -67,10 +67,14 @@
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 2rem;
+    @media $mobile {
+      font-size: 40px;
+      line-height: 1.25;
+    }
   }
   
   &__time {
-    flexy(center, center);
+    flexy(center, flex-start);
     
     .days,
     .hours,
@@ -78,18 +82,29 @@
       flex: 0 0 236px;
       color: $secondary-darker;
       text-align: center;
+      @media $mobile {
+        flex: 0 0 33%;
+      }
     }
     .hours {
-      border-right: 1px solid $gray.border;
-      border-left: 1px solid $gray.border;
+      @media $desktop {
+        border-right: 1px solid $gray.border;
+        border-left: 1px solid $gray.border;
+      }
     }
     
     .num {
       font: bold 150px/0.7 $font-base;
+      @media $mobile {
+        font-size: 100px;
+      }
     }
     .title {
       font: bold 22px $font-base;
       margin-top: 1rem;
+      @media $mobile {
+        font-size: 35px;
+      }
     }
   }
 }

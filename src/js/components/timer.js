@@ -4,7 +4,68 @@
  */
 
 let moment = require("moment");
-
+function getSkl(num) {
+  let group;
+  if (num < 10 || num > 20) {
+    if (num%10 == 1) {
+      group = 1;
+    } else if (num%10 > 1 && num%10 < 5) {
+      group = 2;
+    } else {
+      group = 3;
+    }
+  } else {
+    group = 3;
+  }
+  return group;
+}
+getLocaleTitleD(num) {
+  let title;
+  switch (num) {
+    case 1:
+      title = 'день';
+      break;
+    case 2:
+    case 3:
+    case 4:
+      title = 'дня';
+      break;
+    default:
+      title = 'дней';
+      break;
+  }
+  return title;
+}
+getLocaleTitleH(num) {
+  let title;
+  switch (getSkl(num)) {
+    case 1:
+      title = 'час';
+      break;
+    case 2:
+      title = 'часа';
+      break;
+    default:
+      title = 'часов';
+      break;
+  }
+  return title;
+}
+getLocaleTitleM(num) {
+  let title;
+  switch (getSkl(num)) {
+    case 1:
+      title = 'минуту';
+      break;
+    case 2:
+      title = 'минуты';
+      break;
+    default:
+      title = 'минут';
+      break;
+  }
+  return title;
+}
 /**
  * инициализация событий для таймера
  * @example
@@ -35,14 +96,6 @@ function init(){
     var $dTitle = $('<div class="title" ></div>').appendTo($d),
         $hTitle = $('<div class="title" ></div>').appendTo($h),
         $mTitle = $('<div class="title" ></div>').appendTo($m);
-
-    // titles
-    var dTitle = moment().endOf('month').fromNow().split(' ')[2],
-        hTitle = moment().endOf('days').fromNow().split(' ')[2],
-        mTitle = moment().endOf('hours').fromNow().split(' ')[2];
-        $dTitle.text(dTitle);
-        $hTitle.text(hTitle);
-        $mTitle.text(mTitle);
         
 
     setInterval(function(){
@@ -60,6 +113,11 @@ function init(){
       $dNum.text(d);
       $hNum.text(h);
       $mNum.text(m);
+      
+      // title
+      $dTitle.text(getLocaleTitleD(d));
+      $hTitle.text(getLocaleTitleH(h));
+      $mTitle.text(getLocaleTitleM(m));
 
     }, interval);
 
