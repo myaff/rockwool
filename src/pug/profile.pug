@@ -1,0 +1,48 @@
+extends template
+
+prepend page
+  - var layout = 'detail';
+  - var currentPage = 'profile';
+
+block content
+  .page.page--profile
+    .profile
+      .l-container
+        .profile__heading.tp-heading--big.tp-text--center Личный кабинет
+        .profile__tabs.tabs
+          .tabs__header
+            .tab(data-target="#profile-personal") анкета
+            .tab.is-active(data-target="#profile-codes") коды
+            .tab(data-target="#profile-gifts") ваши призы
+          .tabs__body
+            #profile-personal.tab-content анкета
+            #profile-codes.tab-content
+              .profile-codes
+                .profile-codes__table.table
+                  .table__head
+                    .table__row
+                      .table__col Код
+                      .table__col Статус
+                      .table__col Дата регистрации
+                  .table__body
+                    each item in codes
+                      .table__row
+                        .table__col= item.code
+                        .table__col.tp-text--left
+                          +state(item.state)
+                        .table__col= item.date
+            #profile-gifts.tab-content
+              .profile-gifts
+                .l-flex.profile-gifts__list
+                  .l-col-4_sm-12.profile-gifts__item
+                    +gift(gifts.garantee)
+                  each gift, i in gifts.month
+                    if i > 0 && i < 5
+                      .l-col-4_sm-12.profile-gifts__item
+                        +gift(gift)
+                  .l-col-4_sm-12.profile-gifts__item
+                    +gift(gifts.main)
+        .profile__text.tp-text--center.tp-body--big
+          p Зарегистрируйте больше кодов и выигрывайте призы!
+        .profile__btn.tp-text--center
+          button.btn.btn--secondary.btn--mwide Зарегистрировать код

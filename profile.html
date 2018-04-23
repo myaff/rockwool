@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rockwool</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="build/css/main.css" rel="stylesheet">
+    <script src="build/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="build/img/svg/sprite.js"></script>
+  </head>
+  <body>
+    <div class="svg-sprite l-hidden"></div>
+    <script>$('.svg-sprite').html(SVG_SPRITE);</script>
+    <div class="layout layout--desktop layout--detail">
+      <!-- header-->
+      <div class="header">
+        <div class="l-container">
+          <div class="header__content">
+            <div class="header__logo logo logo--rockwool"><img src="/build/img/rockwool.png" alt="Rockwool"></div>
+            <div class="header__menu">
+              <nav class="main-nav">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a class="main-nav__link" href="gifts.html">призы</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="winners.html">победители</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="faq.html">FAQ</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link disabled" href="rules.html">правила акции</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link disabled" href="#">вход в&nbsp;личный кабинет</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-screen">
+        <div class="l-container">
+          <div class="header-screen__content">
+            <div class="header-screen__img"><img src="/build/img/img-main.png" alt="Rockwool"></div>
+            <div class="header-screen__money"><img src="/build/img/money.png" alt="Rockwool"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page page--profile">
+        <div class="profile">
+          <div class="l-container">
+            <div class="profile__heading tp-heading--big tp-text--center">Личный кабинет</div>
+            <div class="profile__tabs tabs">
+              <div class="tabs__header">
+                <div class="tab" data-target="#profile-personal">анкета</div>
+                <div class="tab is-active" data-target="#profile-codes">коды</div>
+                <div class="tab" data-target="#profile-gifts">ваши призы</div>
+              </div>
+              <div class="tabs__body">
+                <div class="tab-content" id="profile-personal">анкета</div>
+                <div class="tab-content" id="profile-codes">
+                  <div class="profile-codes">
+                    <div class="profile-codes__table table">
+                      <div class="table__head">
+                        <div class="table__row">
+                          <div class="table__col">Код</div>
+                          <div class="table__col">Статус</div>
+                          <div class="table__col">Дата регистрации</div>
+                        </div>
+                      </div>
+                      <div class="table__body">
+                        <div class="table__row">
+                          <div class="table__col">403 678 087</div>
+                          <div class="table__col tp-text--left">
+                                  <div class="state state--success">
+                                    <div class="state__img"><img src="/build/img/states/success.png" alt="Код зарегистрированн"></div>
+                                    <div class="state__text">Код зарегистрированн</div>
+                                  </div>
+                          </div>
+                          <div class="table__col">15.04.18</div>
+                        </div>
+                        <div class="table__row">
+                          <div class="table__col">214 576 795</div>
+                          <div class="table__col tp-text--left">
+                                  <div class="state state--waiting">
+                                    <div class="state__img"><img src="/build/img/states/waiting.png" alt="Код ожидает подтверждения"></div>
+                                    <div class="state__text">Код ожидает подтверждения</div>
+                                  </div>
+                          </div>
+                          <div class="table__col">11.04.18</div>
+                        </div>
+                        <div class="table__row">
+                          <div class="table__col">325 346 353</div>
+                          <div class="table__col tp-text--left">
+                                  <div class="state state--error">
+                                    <div class="state__img"><img src="/build/img/states/error.png" alt="Некорректный код"></div>
+                                    <div class="state__text">Некорректный код</div>
+                                  </div>
+                          </div>
+                          <div class="table__col">09.04.18</div>
+                        </div>
+                        <div class="table__row">
+                          <div class="table__col">123 456 789</div>
+                          <div class="table__col tp-text--left">
+                                  <div class="state state--success">
+                                    <div class="state__img"><img src="/build/img/states/success.png" alt="Код зарегистрированн"></div>
+                                    <div class="state__text">Код зарегистрированн</div>
+                                  </div>
+                          </div>
+                          <div class="table__col">02.04.18</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-content" id="profile-gifts">
+                  <div class="profile-gifts">
+                    <div class="l-flex profile-gifts__list">
+                      <div class="l-col-4_sm-12 profile-gifts__item">
+                              <div class="gift card">
+                                <div class="gift__content">
+                                  <div class="gift__title tp-heading--medium tp-text--primary tp-text--center">гарантированный приз</div>
+                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/garantee.png" alt="Онлайн&amp;#8209;урок «Утепляемся&amp;nbsp;правильно»"></div>
+                                  <div class="gift__name tp-body--big tp-text--center"><b>Онлайн&#8209;урок «Утепляемся&nbsp;правильно»</b></div>
+                                </div>
+                              </div>
+                      </div>
+                      <div class="l-col-4_sm-12 profile-gifts__item">
+                              <div class="gift card">
+                                <div class="gift__content">
+                                  <div class="gift__title tp-heading--medium tp-text--primary tp-text--center">Приз месяца</div>
+                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/june.png" alt="Грили&amp;#8209;барбекю"></div>
+                                  <div class="gift__name tp-body--big tp-text--center"><b>Грили&#8209;барбекю</b></div>
+                                </div>
+                              </div>
+                      </div>
+                      <div class="l-col-4_sm-12 profile-gifts__item">
+                              <div class="gift card">
+                                <div class="gift__content">
+                                  <div class="gift__title tp-heading--medium tp-text--primary tp-text--center">Приз месяца</div>
+                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/july.png" alt="Продукты ROCKWOOL"></div>
+                                  <div class="gift__name tp-body--big tp-text--center"><b>Продукты ROCKWOOL</b></div>
+                                </div>
+                              </div>
+                      </div>
+                      <div class="l-col-4_sm-12 profile-gifts__item">
+                              <div class="gift card">
+                                <div class="gift__content">
+                                  <div class="gift__title tp-heading--medium tp-text--primary tp-text--center">Приз месяца</div>
+                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/august.png" alt="Пылесос"></div>
+                                  <div class="gift__name tp-body--big tp-text--center"><b>Пылесос</b></div>
+                                </div>
+                              </div>
+                      </div>
+                      <div class="l-col-4_sm-12 profile-gifts__item">
+                              <div class="gift card">
+                                <div class="gift__content">
+                                  <div class="gift__title tp-heading--medium tp-text--primary tp-text--center">Приз месяца</div>
+                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/september.png" alt="Пакет спутникового ТВ"></div>
+                                  <div class="gift__name tp-body--big tp-text--center"><b>Пакет спутникового ТВ</b></div>
+                                </div>
+                              </div>
+                      </div>
+                      <div class="l-col-4_sm-12 profile-gifts__item">
+                              <div class="gift card">
+                                <div class="gift__content">
+                                  <div class="gift__title tp-heading--medium tp-text--primary tp-text--center">Главный приз</div>
+                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/main.png" alt="Пачка денег толщиной 100&amp;nbsp;мм*"></div>
+                                  <div class="gift__name tp-body--big tp-text--center"><b>Пачка денег толщиной 100&nbsp;мм*</b></div>
+                                </div>
+                              </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="profile__text tp-text--center tp-body--big">
+              <p>Зарегистрируйте больше кодов и выигрывайте призы!</p>
+            </div>
+            <div class="profile__btn tp-text--center">
+              <button class="btn btn--secondary btn--mwide">Зарегистрировать код</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer-->
+      <div class="footer">
+        <div class="l-container">
+          <div class="footer__content">
+            <div class="l-flex-noBottom">
+              <div class="l-col-10_sm-12">
+                <div class="footer__copy">
+                  <p>Copyright © 2018, ROCKWOOL International A/S</p>
+                </div>
+              </div>
+              <div class="l-col-2_sm-12">
+                <div class="footer__link tp-text--upper"><a href="#" target="_blank">Правила акции</a></div>
+              </div>
+            </div>
+            <div class="footer__text">
+              <p>* Приз составляет 91&nbsp;800 (Девяносто одну тысячу восемьсот) рублей, 00&nbsp;копеек</p>
+              <p>&laquo;Общий срок проведения Акции с&nbsp;01.05.2018 года по&nbsp;15&nbsp;октября 2018. С&nbsp;информацией об&nbsp;организаторе Акции, правилах ее&nbsp;проведения, количестве призов или выигрышей по&nbsp;результатам Акции, сроках, месте и&nbsp;порядке их&nbsp;получения можно ознакомиться на&nbsp;сайте www.rockwool100.ru. Количество призов ограничено. Внешний вид призов может отличаться от&nbsp;изображений&raquo;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="build/js/main.js"></script>
+  </body>
+</html>

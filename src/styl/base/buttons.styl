@@ -5,7 +5,7 @@
   font-weight: bold;
   text-align: center;
   vertical-align: middle;
-  padding: 15px 2rem;
+  padding: 17px 2rem 13px;
   border: 1px solid transparent;
   border-radius: 0;
   box-sizing: border-box;
@@ -16,6 +16,11 @@
   
   {hover-focus-acitve} {
     outline: 0;
+  }
+  
+  @media $mobile {
+    font-size: (40*100/750)vw;
+    padding: (34*100/750)vw;
   }
   
   // **** sizes ****
@@ -47,8 +52,8 @@
     
     {hover-focus-active} {
       color: $black;
-      border-color: currentColor;
-      background: transparent;
+      background: darken($secondary, 20%);
+      border-color: transparent;
     }
   }
   &--primary-outline {
@@ -83,4 +88,10 @@
     color: inherit;
   }
   
+  &--mwide {
+    @media $mobile {
+      display: block;
+      width: 100%;
+    }
+  }
 }

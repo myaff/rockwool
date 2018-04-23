@@ -1,0 +1,31 @@
+.page {
+  &--winners {
+    .winners {
+      @media $mobile {
+        padding-bottom: (100*100/750)vw;
+      }
+      @media $desktop {
+        padding-bottom: 85px;
+      }
+      &__heading {
+        margin-bottom: 2rem;
+      }
+      &__table {
+        margin-top: 2rem;
+        .table {
+          &__col {
+            width: 50%;
+            @media $mobile {
+              &:first-child {
+                width: 75%;
+              }
+              &:last-child {
+                width: 25%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

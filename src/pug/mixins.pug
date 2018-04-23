@@ -105,3 +105,46 @@ mixin squareBrakets(contentText)
     .expander
     .content
       block
+
+mixin gift(gift, mode, altImg = false, altTitle = false)
+  div&attributes(attributes).gift.card(class= mode =='ext'? 'gift--ext' : '')
+    .gift__content
+      if mode == 'ext'
+        if altTitle
+          .gift__title.tp-heading--medium.tp-text--primary.tp-text--center.l-hidden-md-up !{gift.month}
+        else
+          .gift__title.tp-heading--medium.tp-text--primary.tp-text--center.l-hidden-md-up !{gift.title}
+        .gift__img: img(src= altImg ? gift.imgAlt : gift.img, alt=gift.name)
+        .gift__info
+          if altTitle
+            .gift__title.tp-heading--medium.tp-text--primary.l-hidden-sm-down !{gift.month}
+          else
+            .gift__title.tp-heading--medium.tp-text--primary.l-hidden-sm-down !{gift.title}
+          .gift__name.tp-body--big
+            b !{gift.name}
+          .gift__desc !{gift.desc}
+      else
+        if altTitle
+          .gift__title.tp-heading--medium.tp-text--primary.tp-text--center !{gift.month}
+        else
+          .gift__title.tp-heading--medium.tp-text--primary.tp-text--center !{gift.title}
+        .gift__img.tp-text--center: img(src= altImg ? gift.imgAlt : gift.img, alt=gift.name)
+        .gift__name.tp-body--big.tp-text--center
+          b !{gift.name}
+          
+mixin accordion(item)
+  div&attributes(attributes).accordion
+    .accordion__header
+      .accordion__header-q
+        +icon('q')
+      .accordion__header-text
+        span !{item.q}
+      .accordion__header-carret
+        +icon('arrow')(class="icon--stroked")
+    .accordion__body
+      .accordion__content !{item.a}
+      
+mixin state(state)
+  div&attributes(attributes).state(class="state--" + state)
+    .state__img: img(src=states[state].img, alt=states[state].text)
+    .state__text !{states[state].text}

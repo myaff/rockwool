@@ -1,0 +1,25 @@
+.page {
+  &--faq {
+    .faq {
+      padding-top: 1rem;
+      @media $mobile {
+        padding-bottom: (100*100/750)vw;
+      }
+      @media $desktop {
+        padding-bottom: 85px;
+      }
+      &__heading {
+        margin-bottom: 3rem;
+        @media $mobile {
+          margin-bottom: (60*100/750)vw;
+        }
+      }
+      &__item {
+        margin-bottom: 2rem;
+        @media $mobile {
+          margin-bottom: (60*100/750)vw;
+        }
+      }
+    }
+  }
+}

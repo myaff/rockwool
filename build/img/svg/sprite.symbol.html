@@ -19,8 +19,11 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style type="text/css">
+	.svg-arrow-dims { width: 30px; height: 19.59px; }
 	.svg-check-dims { width: 30px; height: 24.67px; }
 	.svg-cross-dims { width: 30px; height: 30px; }
+	.svg-loupe-dims { width: 30px; height: 30px; }
+	.svg-q-dims { width: 22.23px; height: 30px; }
 </style>
 <!--
 ====================================================================================================
@@ -43,8 +46,11 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
+		<symbol viewBox="0 0 462.448 301.935" id="arrow" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M427.092 35.356L231.224 231.224 35.355 35.356"/></symbol>
 		<symbol viewBox="0 0 317.068 260.74" id="check" xmlns="http://www.w3.org/2000/svg"><path d="M315.714.028c-88.576 19.054-164.725 73.029-212.611 147.333A236.611 236.611 0 0 0 6.79 110.78c-2.182-.316-4.43.285-6.104 1.72-.701.602-1.036 1.144-.163 1.873 67.612 56.506 93.802 125.955 100.014 145.05.55 1.691 2.893 1.772 3.579.132 11.537-27.569 24.785-53.817 39.543-78.536 45.387-76.082 104.988-137.732 172.87-178.956 1.073-.65.41-2.299-.815-2.035"/></symbol>
 		<symbol viewBox="0 0 500 500" id="cross" xmlns="http://www.w3.org/2000/svg"><path d="M250 143.565L106.436.001 0 106.435 143.564 250 0 393.563 106.436 500 250 356.437 393.564 500 500 393.563 356.437 250 500 106.435 393.564.001z"/></symbol>
+		<symbol viewBox="0 0 225.427 225.424" id="loupe" xmlns="http://www.w3.org/2000/svg"><path d="M147.667 168.459c.188.306.401.588.66.896 3.004 3.462 44.664 49.576 49.376 54.289 4.713 4.711 15.843-.872 20.465-5.835 4.622-4.965 10.18-15.395 5.467-20.107-4.713-4.714-50.813-46.35-54.289-49.365a6.25 6.25 0 0 0-1.167-.825c-.354 2.828-2.297 6.999-8.141 12.842-5.49 5.489-9.518 7.563-12.371 8.105M160.108 130.075c19.676-33.037 15.293-76.416-13.147-104.857-33.625-33.625-88.127-33.625-121.751 0-33.613 33.624-33.613 88.126 0 121.75 28.24 28.229 71.195 32.753 104.16 13.574 1.179 1.084 4.689 3.604 10.64 1.813 3.51-1.06 7.869-3.604 13.112-8.835 5.231-5.257 7.765-9.591 8.801-13.078 1.673-5.654-.624-9.071-1.815-10.367M34.399 137.78c-28.488-28.513-28.488-74.885 0-103.373 28.5-28.487 74.872-28.487 103.373 0 28.499 28.512 28.499 74.885 0 103.373-28.501 28.487-74.873 28.487-103.373 0"/></symbol>
+		<symbol viewBox="0 0 29.675 40.042" id="q" xmlns="http://www.w3.org/2000/svg"><path d="M19.833 24.291c.474-.868 1.615-2.018 3.424-3.451 2.596-2.041 4.314-3.769 5.156-5.183.841-1.414 1.262-2.882 1.262-4.404 0-3.67-1.629-6.606-4.888-8.809C22.388.815 19.237 0 15.334 0 10.321 0 6.602 1.168 4.176 3.505 1.75 5.841.358 8.925 0 12.756l10.42 1.289c.232-2.095.765-3.563 1.598-4.404.833-.841 1.884-1.262 3.156-1.262 1.182 0 2.063.273 2.645.819.582.546.873 1.312.873 2.296 0 .985-.725 2.068-2.175 3.25-2.722 2.256-4.471 3.832-5.25 4.727a9.377 9.377 0 0 0-1.759 2.967c-.394 1.083-.591 2.494-.591 4.23v1.021h10.205c-.001-1.397.236-2.53.711-3.398zM8.567 40.042h10.93V30.4H8.567v9.642z"/></symbol>
 </svg>
 
 <!--
@@ -74,6 +80,17 @@ embedded above. They may be styled via CSS.
 			<h3>A) Inline SVG with embedded sprite</h3>
 			<ul>
 
+				<li title="arrow">
+					<div class="icon-box">
+						
+						<!-- arrow -->
+						<svg class="svg-arrow-dims">
+							<use xlink:href="#arrow"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow</h2>
+				</li>
 				<li title="check">
 					<div class="icon-box">
 						
@@ -96,6 +113,28 @@ embedded above. They may be styled via CSS.
 					</div>
 					<h2>cross</h2>
 				</li>
+				<li title="loupe">
+					<div class="icon-box">
+						
+						<!-- loupe -->
+						<svg class="svg-loupe-dims">
+							<use xlink:href="#loupe"></use>
+						</svg>
+						
+					</div>
+					<h2>loupe</h2>
+				</li>
+				<li title="q">
+					<div class="icon-box">
+						
+						<!-- q -->
+						<svg class="svg-q-dims">
+							<use xlink:href="#q"></use>
+						</svg>
+						
+					</div>
+					<h2>q</h2>
+				</li>
 			</ul>
 
 <!--
@@ -117,6 +156,17 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
 			<ul>
 				
+				<li title="arrow">
+					<div class="icon-box">
+						
+						<!-- arrow -->
+						<svg class="svg-arrow-dims">
+							<use xlink:href="sprite.svg#arrow"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow</h2>
+				</li>
 				<li title="check">
 					<div class="icon-box">
 						
@@ -139,6 +189,28 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 					</div>
 					<h2>cross</h2>
 				</li>
+				<li title="loupe">
+					<div class="icon-box">
+						
+						<!-- loupe -->
+						<svg class="svg-loupe-dims">
+							<use xlink:href="sprite.svg#loupe"></use>
+						</svg>
+						
+					</div>
+					<h2>loupe</h2>
+				</li>
+				<li title="q">
+					<div class="icon-box">
+						
+						<!-- q -->
+						<svg class="svg-q-dims">
+							<use xlink:href="sprite.svg#q"></use>
+						</svg>
+						
+					</div>
+					<h2>q</h2>
+				</li>
 			</ul>
 
 <!--
@@ -147,7 +219,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Thu, 19 Apr 2018 11:33:40 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Mon, 23 Apr 2018 18:48:17 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>

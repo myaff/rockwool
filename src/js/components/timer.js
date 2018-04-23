@@ -19,7 +19,7 @@ function getSkl(num) {
   }
   return group;
 }
-getLocaleTitleD(num) {
+function getLocaleTitleD(num) {
   let title;
   switch (num) {
     case 1:
@@ -36,7 +36,7 @@ getLocaleTitleD(num) {
   }
   return title;
 }
-getLocaleTitleH(num) {
+function getLocaleTitleH(num) {
   let title;
   switch (getSkl(num)) {
     case 1:
@@ -51,7 +51,7 @@ getLocaleTitleH(num) {
   }
   return title;
 }
-getLocaleTitleM(num) {
+function getLocaleTitleM(num) {
   let title;
   switch (getSkl(num)) {
     case 1:

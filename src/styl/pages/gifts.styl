@@ -1,0 +1,24 @@
+.page {
+  &--gifts {
+    .gifts {
+      padding: 1rem 0 85px;
+      @media $mobile {
+        padding-bottom: (85*100/750)vw;
+      }
+      &__heading {
+        margin-bottom: 3rem;
+        @media $mobile {
+          margin-bottom: (50*100/750)vw;
+        }
+      }
+      &__list {
+        @media $desktop {
+          margin-bottom: 1.5rem;
+        }
+      }
+      &__btn {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

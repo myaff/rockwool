@@ -6,4 +6,38 @@ prepend page
 
 block content
   .page.page--home
-    
+    .code-reg
+      .l-container
+        .code-reg__content
+          .code-reg__heading.tp-heading--big.tp-text--primary регистрация кода
+          if isLoggedin
+            .code-reg__form Form
+          else
+            .code-reg__text.tp-body--big
+              b зарегистрируйте код, чтобы принять участие в розыгрыше призов!
+            .code-reg__btn
+              button.btn.btn--secondary.btn--mwide Зарегистрировать
+    .steps
+      .l-container
+        .l-flex.steps__list
+          for step, i in steps
+            .l-col-3_sm-12.steps__item
+              .step
+                .step__num.tp-text--secondary= i + 1
+                .step__content
+                  .step__title.tp-heading--medium.tp-text--primary= step.title
+                  .step__desc.tp-body--medium.tp-text--upper !{step.desc}
+        .steps__btn.tp-text--center
+          button.btn.btn--secondary.btn--mwide видео-инструкция
+    .gifts
+      .l-container
+        .gifts__heading.tp-heading--big.tp-text--center призы
+        .l-flex.gifts__list
+          .l-col-4_sm-12.gifts__item
+            +gift(gifts.garantee)
+          .l-col-4_sm-12.gifts__item
+            +gift(gifts.month[3])
+          .l-col-4_sm-12.gifts__item
+            +gift(gifts.main)
+        .gifts__btn.tp-text--center
+          a.btn.btn--secondary.btn--mwide(href="/gifts.html") все призы

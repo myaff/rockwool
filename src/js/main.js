@@ -4,6 +4,8 @@ let Input = require("./components/input");
 let Form = require("./components/form");
 let Modal = require("./components/modal");
 let Timer = require("./components/timer");
+let Accordion = require("./components/accordion");
+let Tabs = require("./components/tabs");
 
 $(document).ready(function(){
   
@@ -13,6 +15,8 @@ $(document).ready(function(){
   Form.init();
   Modal.init();
   Timer.init();
+  Accordion.init();
+  Tabs.init();
 });
 
 
@@ -27,5 +31,7 @@ module.exports = {
   Input,
   Form,
   Modal,
-  Timer
+  Timer,
+  Accordion,
+  Tabs
 };

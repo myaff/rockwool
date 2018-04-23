@@ -1,0 +1,23 @@
+extends template
+
+prepend page
+  - var layout = 'detail';
+  - var currentPage = 'winners';
+
+block content
+  .page.page--winners
+    .winners
+      .l-container
+        .winners__heading.tp-heading--big.tp-text--center Победители
+        .winners__content
+          .winners__search Search
+          .winners__table.table.tp-body--big
+            .table__head
+              .table__row
+                .table__col E-mail
+                .table__col Дата
+            .table__body
+              each winner in winners
+                .table__row
+                  .table__col= winner.email
+                  .table__col= winner.date

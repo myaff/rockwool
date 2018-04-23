@@ -1,0 +1,41 @@
+.steps {
+  margin: (70*100/750)vw 0 (50*100/750)vw;
+  @media $desktop {
+    margin: 4rem 0;
+  }
+  
+  &__btn {
+    @media $desktop {
+      display: block;
+      margin: 0 auto;
+      max-width: 310px;
+    }
+  }
+}
+.step {
+  @media $mobile {
+    flexy(flex-start, flex-start);
+    margin-bottom: (50*100/750)vw;
+  }
+  &__num {
+    font: bold (140*100/750)vw/0.8 $font-base;
+    @media $mobile {
+      flex: 0 0 (160*100/750)vw;
+      text-align: center;
+    }
+    @media $desktop {
+      font-size: 110px;
+    }
+  }
+  &__content {
+    @media $mobile {
+      padding-right: (30*100/750)vw;
+    }
+  }
+  &__title {
+    margin-bottom: (16*100/750)vw;
+    @media $desktop {
+      margin: -2.25rem 0 1.5rem;
+    }
+  }
+}

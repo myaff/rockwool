@@ -1,0 +1,16 @@
+extends template
+
+prepend page
+  - var layout = 'detail';
+  - var currentPage = 'faq';
+
+block content
+  .page.page--faq
+    .faq
+      .l-container
+        .faq__heading.tp-heading--big.tp-text--center вопросы и ответы
+        .faq__content
+          .faq__list
+            each item in faq
+              .faq__item
+                +accordion(item)

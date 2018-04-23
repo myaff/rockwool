@@ -1,0 +1,74 @@
+.page {
+  &--profile {
+    .profile {
+      padding: 1rem 0 85px;
+      @media $mobile {
+        padding-bottom: (85*100/750)vw;
+      }
+      &__heading {
+        margin-bottom: 3rem;
+        @media $mobile {
+          margin-bottom: (50*100/750)vw;
+        }
+      }
+      &__tabs {
+        @media $desktop {
+          margin-bottom: 1.5rem;
+        }
+      }
+      &__btn {
+        margin-top: 1.5rem;
+      }
+      
+      &-gifts__item {
+        margin-bottom: 1.5rem;
+      }
+      
+      &-codes__table {
+        margin-bottom: 3rem;
+        @media $mobile {
+          margin-bottom: (60*100/750)vw;
+        }
+        .table {
+          &__row {
+            @media $mobile {
+              display: flex;
+            }
+          }
+          &__col {
+            width: 33.33%;
+            @media $mobile {
+              padding-bottom: (80*100/750)vw;
+              font-size: (36*100/750)vw;
+              &:first-child {
+                width: 33.33%;
+              }
+              &:last-child {
+                width: 66.66%;
+              }
+            }
+          }
+          &__body .table__col:nth-child(2) {
+            text-align: left;
+            @media $mobile {
+              width: 100%;
+              padding-bottom: (25*100/750)vw;
+              absolute(0, 0px, 0px);
+            }
+          }
+          &__head .table__col {
+            @media $mobile {
+              padding-bottom: (24*100/750)vw;
+              font-size: (40*100/750)vw;
+            }
+          }
+          &__head .table__col:nth-child(2) {
+            @media $mobile {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,32 @@
 .footer {
   background: $black;
   color: $gray.text;
-  padding: 1rem 0 1.5rem;
   font: normal 14px/1.5 $font-util;
+  padding: 1rem 0 1.5rem;
   
+  @media $mobile {
+    padding: (50*100/750)vw 0 220px;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  &__link,
+  &__copy {
+    @media $mobile {
+      text-align: center;
+    }
+  }
+  &__link {
+    @media $mobile {
+      margin-top: 1rem;
+    }
+  }
   &__text {
     margin-top: 1rem;
+    @media $desktop {
+      font-size: 10px;
+    }
   }
 }

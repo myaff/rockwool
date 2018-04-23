@@ -5,9 +5,12 @@
   z-index: 9;
   box-shadow: 0 0 50px rgba(#000, 0.8);
   
-  .layout--dummy & {
-    @media $mobile {
-      background: url("../img/main-mobile.png") top center no-repeat;
+  @media $mobile {
+    background: url("../img/main-mobile.png") top center no-repeat;
+    background-size: cover;
+    
+    .layout--detail & {
+      box-shadow: none;
     }
   }
   
@@ -47,6 +50,12 @@
   .layout--dummy & {
     background: url("../img/main-dummy.png") bottom center no-repeat;
     background-size: cover;
+  }
+  .layout--detail & {
+    background: url("../img/bg-header.png") bottom center no-repeat;
+    background-size: cover;
+  }
+  .layout & {
     @media $mobile {
       background: url("../img/main-mobile.png") bottom center no-repeat;
       background-size: cover;
@@ -54,16 +63,39 @@
   }
   
   &__content {  
-    padding-top: 60px;
+    padding: 60px 0 40px;
     height: 553px;
     .layout--dummy & {
       height: 460px;
-      @media $mobile {
-        height: 78.67vw;
+    }
+    .layout--detail & {
+      height: 393px;
+    }
+    @media $mobile {
+      height: 78.67vw;
+      
+      .layout--detail & {
+        height: 60px;
+        padding: 0;
+        z-index: 0;
+        opacity: 0;
       }
     }
   }
   &__img {
+    display: none;
+    height: 100%;
+    margin-left: -30px;
+    img {
+      height: 100%;
+    }
+    @media $desktop {
+      .layout--detail & {
+        display: block;
+      }
+    }
+  }
+  &__money {
     absolute();
     right: 0;
     bottom: -80px;
@@ -73,10 +105,16 @@
     .layout--dummy & {
       width: 440px;
       bottom: -260px;
-      @media screen and (max-width: 990px) {
+    }
+    .layout--detail & {
+      width: 375px;
+      bottom: -1rem;
+      @media $mobile {
         width: (300*100/750)vw;
         bottom: (-200*100/750)vw;
       }
+    }
+    .layout & {
       @media $mobile {
         width: 37.33vw ;
         bottom: -5.33vw ;

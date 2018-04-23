@@ -1,0 +1,30 @@
+extends template
+
+prepend page
+  - var layout = 'detail';
+  - var currentPage = 'gifts';
+
+block content
+  .page.page--gifts
+    .gifts
+      .l-container
+        .gifts__heading.tp-heading--big.tp-text--center призы
+        .l-flex.gifts__list
+          .l-col-8_sm-12.gifts__item
+            +gift(gifts.main, 'ext')(class="gift--main")
+          .l-col-4_sm-12.gifts__item
+            +gift(gifts.garantee,'simple', true)(class="gift--garantee")
+        .l-flex.gifts__list
+          each gift, i in gifts.month
+            if i < 2
+              .l-col-6_sm-12.gifts__item
+                +gift(gift, 'ext', false, true)(class="gift--hrz")
+        .l-flex.gifts__list
+          each gift, i in gifts.month
+            if i > 1
+              .l-col-4_sm-12.gifts__item
+                +gift(gift, 'ext', false, true)
+        .gifts__text.tp-text--center.tp-body--big
+          p Зарегистрируйте больше кодов и выигрывайте призы!
+        .gifts__btn.tp-text--center
+          button.btn.btn--secondary.btn--mwide Зарегистрировать код

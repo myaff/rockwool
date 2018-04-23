@@ -1,5 +1,19 @@
 .page {
   &--home {
-    
+    .gifts {
+      @media $mobile {
+        padding-bottom: (100*100/750)vw;
+      }
+      @media $desktop {
+        padding-bottom: 85px;
+        background: url('../img/bg-wide.png') bottom center no-repeat;
+      }
+      &__heading {
+        margin-bottom: 2rem;
+      }
+      &__btn {
+        margin-top: 1.5rem;
+      }
+    }
   }
 }
