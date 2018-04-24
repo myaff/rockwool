@@ -12,10 +12,20 @@ block content
         .profile__tabs.tabs
           .tabs__header
             .tab(data-target="#profile-personal") анкета
-            .tab.is-active(data-target="#profile-codes") коды
+            .tab(data-target="#profile-codes") коды
             .tab(data-target="#profile-gifts") ваши призы
           .tabs__body
-            #profile-personal.tab-content анкета
+            #profile-personal.tab-content
+              .l-flex-noBottom-center
+                .l-col-10_sm-12.l-flex-noBottom
+                  .l-col-6_sm-12
+                    +fieldInput("profile-name", "ФИО")(type="text")
+                    +fieldInput("profile-location", "Город")(type="text")
+                    +fieldInput("profile-email", "E-mail")(type="email")
+                  .l-col-6_sm-12
+                    +fieldInput("profile-password", "Новый пароль")(type="password")
+                    +fieldCheckbox("profile-agreement-rules", "Я согласен с&nbsp;условиями акции")(checked)
+                    +fieldCheckbox("profile-agreement-subscribe", "Я согласен с&nbsp;пользовательским соглашением, на&nbsp;получение рекламной информации")
             #profile-codes.tab-content
               .profile-codes
                 .profile-codes__table.table

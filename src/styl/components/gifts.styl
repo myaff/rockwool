@@ -6,8 +6,8 @@
   }
   
   &--ext {
+    height: 100%;
     @media $desktop {
-      height: 390px;
       padding-top: 1rem;
     }
   }
@@ -31,7 +31,7 @@
   }
   &--ext &__info {
     @media $desktop {
-      flex: 0 0 60%;
+      flex: 1 1 auto;
     }
   }
   &--hrz &__info {
@@ -48,8 +48,12 @@
     min-height: 0;
     flexy(center, stretch);
     ^[0]--ext & {
+      display: block;
+      @media $mobile {
+        flex: 0 0 (300*100/750)vw;
+      }
       @media $desktop {
-        display: block;
+        flex: 0 0 124px;
         margin-bottom: 1rem;
       }
     }
@@ -71,6 +75,10 @@
       object-fit: contain;
       max-width: 100%;
       ^[0]--ext & {
+        @media $mobile {
+          margin: 0 auto;
+          height: (300*100/750)vw;
+        }
         @media $desktop {
           margin: 0;
           height: 124px;
@@ -103,7 +111,7 @@
     margin-top: 1.5rem;
     line-height: 1.25;
     @media $mobile {
-      font-size: (16*100/750)vw;
+      font-size: (30*100/750)vw;
       margin-top: (24*100/750)vw;
       text-align: center;
     }

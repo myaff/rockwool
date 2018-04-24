@@ -4,14 +4,8 @@
  */
 
 let mainMenu = {
-  el: $('.header-menu'),
-  btn: $('.btn-menu'),
-  state: false
-}
-let dropdownMenu = {
-  el: $('.top-nav-dropdown'),
-  btn: $('.top-nav-dropdown__activator'),
-  dropdown: $('.top-nav-dropdown__menu'),
+  el: $('.main-nav'),
+  btn: $('.main-nav-btn'),
   state: false
 }
 
@@ -26,23 +20,17 @@ function checkMenu (menu, menuState) {
 
 function openMenu (menu) {
   menu.state = true;
-  menu.btn.addClass('is-opened');
-  if (menu.hasOwnProperty('dropdown')) {
-    menu.dropdown.slideDown(500);
-  } else {
-    menu.el.fadeIn(500);
-  }
+  $('html, body').css('overflow-y', 'hidden');
+  menu.btn.addClass('is-open');
+  menu.el.fadeIn(500);
   menu.el.trigger('opened');
 }
 
 function closeMenu (menu) {
   menu.state = false;
-  menu.btn.removeClass('is-opened');
-  if (menu.hasOwnProperty('dropdown')) {
-    menu.dropdown.slideUp(500);
-  } else {
-    menu.el.fadeOut(300);
-  }
+  $('html, body').css('overflow-y', '');
+  menu.btn.removeClass('is-open');
+  menu.el.fadeOut(300);
   menu.el.trigger('closed');
 }
 
@@ -57,12 +45,10 @@ function init(){
   
   // set initial state
   checkMenu(mainMenu, !isSmall);
-  checkMenu(dropdownMenu, !isSmall);
   // set state after resize
   $(window).on('resizeend', function () {
     isSmall = Main.DeviceDetection.isMobile() || Main.DeviceDetection.isTablet();
     checkMenu(mainMenu, !isSmall);
-    checkMenu(dropdownMenu, !isSmall);
   });
   
   // toggle state by btn
@@ -70,27 +56,16 @@ function init(){
     e.stopPropagation();
     checkMenu(mainMenu, !mainMenu.state);
   });
-  dropdownMenu.btn.on('click', function (e) {
-    e.stopPropagation();
-    checkMenu(dropdownMenu, !dropdownMenu.state);
-  });
   
   // close by click outside
   $('.layout').on('click', function (e) {
-    console.dir(e);
     if (!mainMenu.el.find(e.target).length) {
       closeMenu(mainMenu);
-    }
-    if (!dropdownMenu.el.find(e.target).length) {
-      closeMenu(dropdownMenu);
     }
   });
   
   // stop bubbling click inside
   mainMenu.el.on('click', function (e) {
-    e.stopPropagation();
-  })
-  dropdownMenu.el.on('click', function (e) {
     e.stopPropagation();
   })
   

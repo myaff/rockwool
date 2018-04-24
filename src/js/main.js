@@ -6,6 +6,7 @@ let Modal = require("./components/modal");
 let Timer = require("./components/timer");
 let Accordion = require("./components/accordion");
 let Tabs = require("./components/tabs");
+let MainMenu = require("./components/main-menu");
 
 $(document).ready(function(){
   
@@ -17,6 +18,7 @@ $(document).ready(function(){
   Timer.init();
   Accordion.init();
   Tabs.init();
+  MainMenu.init();
 });
 
 
@@ -33,5 +35,6 @@ module.exports = {
   Modal,
   Timer,
   Accordion,
-  Tabs
+  Tabs,
+  MainMenu
 };

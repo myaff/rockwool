@@ -11,20 +11,23 @@
   <body>
     <div class="svg-sprite l-hidden"></div>
     <script>$('.svg-sprite').html(SVG_SPRITE);</script>
-    <div class="layout layout--desktop layout--undefined">
+    <div class="layout layout--undefined layout--loggedin">
       <!-- header-->
       <div class="header">
         <div class="l-container">
-          <div class="header__content">
-            <div class="header__logo logo logo--rockwool"><img src="/build/img/rockwool.png" alt="Rockwool"></div>
+          <div class="header__content"><a class="header__logo logo logo--rockwool" href="/"><img src="/build/img/rockwool.png" alt="Rockwool"></a>
             <div class="header__menu">
+              <div class="main-nav-btn">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
               <nav class="main-nav">
                 <ul class="main-nav__list">
                   <li class="main-nav__item"><a class="main-nav__link" href="gifts.html">призы</a></li>
                   <li class="main-nav__item"><a class="main-nav__link" href="winners.html">победители</a></li>
                   <li class="main-nav__item"><a class="main-nav__link" href="faq.html">FAQ</a></li>
-                  <li class="main-nav__item"><a class="main-nav__link disabled" href="rules.html">правила акции</a></li>
-                  <li class="main-nav__item"><a class="main-nav__link disabled" href="#">вход в&nbsp;личный кабинет</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="profile.html">личный кабинет</a></li>
                 </ul>
               </nav>
             </div>

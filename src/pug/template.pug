@@ -1,5 +1,5 @@
 include ./mixins
-- var isLoggedin = false;
+- var isLoggedin = true;
 doctype html
 block page
   html
@@ -20,7 +20,7 @@ block page
       .svg-sprite.l-hidden
       script
         | $('.svg-sprite').html(SVG_SPRITE);
-      .layout.layout--desktop(class="layout--" + layout)
+      .layout(class="layout--" + layout, class= isLoggedin ? "layout--loggedin" : "")
         include parts/header
         block content
         include parts/footer

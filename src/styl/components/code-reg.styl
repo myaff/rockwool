@@ -12,4 +12,20 @@
   &__text {
     margin-bottom: 1.5rem;
   }
+  
+  &__form {
+    margin-top: 1.5rem;
+    .field--checkbox,
+    .field--radio {
+      @media $desktop {
+        display: inline-block;
+        margin-bottom: 0;
+        
+        & + .field--checkbox,
+        & + .field--radio {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
 }

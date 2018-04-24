@@ -10,7 +10,10 @@ block content
       .l-container
         .winners__heading.tp-heading--big.tp-text--center Победители
         .winners__content
-          .winners__search Search
+          .winners__search
+            .l-flex-noBottom-center
+              .l-col-6_sm-12
+                +fieldSearch('winners-search', 'E-mail участника')(type="search")
           .winners__table.table.tp-body--big
             .table__head
               .table__row

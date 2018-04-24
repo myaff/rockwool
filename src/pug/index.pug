@@ -11,7 +11,14 @@ block content
         .code-reg__content
           .code-reg__heading.tp-heading--big.tp-text--primary регистрация кода
           if isLoggedin
-            .code-reg__form Form
+            .code-reg__form
+              .l-flex-noBottom
+                .l-col-8_sm-12
+                  +fieldInput('home-code-inp', 'Ваш код')(type="text")
+                  +fieldCheckbox('home-code-pers', 'Я покупаю для себя (частник)')(name="home-code-check", checked)
+                  +fieldCheckbox('home-code-pro', 'Я покупаю для работы (профессионал)')(name="home-code-check")
+                .l-col-4_sm-12
+                  button.btn.btn--secondary.btn--block.btn--mwide Зарегистрировать
           else
             .code-reg__text.tp-body--big
               b зарегистрируйте код, чтобы принять участие в розыгрыше призов!

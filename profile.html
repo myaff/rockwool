@@ -11,20 +11,23 @@
   <body>
     <div class="svg-sprite l-hidden"></div>
     <script>$('.svg-sprite').html(SVG_SPRITE);</script>
-    <div class="layout layout--desktop layout--detail">
+    <div class="layout layout--detail layout--loggedin">
       <!-- header-->
       <div class="header">
         <div class="l-container">
-          <div class="header__content">
-            <div class="header__logo logo logo--rockwool"><img src="/build/img/rockwool.png" alt="Rockwool"></div>
+          <div class="header__content"><a class="header__logo logo logo--rockwool" href="/"><img src="/build/img/rockwool.png" alt="Rockwool"></a>
             <div class="header__menu">
+              <div class="main-nav-btn">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
               <nav class="main-nav">
                 <ul class="main-nav__list">
                   <li class="main-nav__item"><a class="main-nav__link" href="gifts.html">призы</a></li>
                   <li class="main-nav__item"><a class="main-nav__link" href="winners.html">победители</a></li>
                   <li class="main-nav__item"><a class="main-nav__link" href="faq.html">FAQ</a></li>
-                  <li class="main-nav__item"><a class="main-nav__link disabled" href="rules.html">правила акции</a></li>
-                  <li class="main-nav__item"><a class="main-nav__link disabled" href="#">вход в&nbsp;личный кабинет</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="profile.html">личный кабинет</a></li>
                 </ul>
               </nav>
             </div>
@@ -46,11 +49,70 @@
             <div class="profile__tabs tabs">
               <div class="tabs__header">
                 <div class="tab" data-target="#profile-personal">анкета</div>
-                <div class="tab is-active" data-target="#profile-codes">коды</div>
+                <div class="tab" data-target="#profile-codes">коды</div>
                 <div class="tab" data-target="#profile-gifts">ваши призы</div>
               </div>
               <div class="tabs__body">
-                <div class="tab-content" id="profile-personal">анкета</div>
+                <div class="tab-content" id="profile-personal">
+                  <div class="l-flex-noBottom-center">
+                    <div class="l-col-10_sm-12 l-flex-noBottom">
+                      <div class="l-col-6_sm-12">
+                              <div class="field form__field">
+                                <label class="field__label" for="profile-name">
+                                  <input class="field__input" id="profile-name" type="text">
+                                  <div class="field__placeholder">ФИО</div>
+                                </label>
+                              </div>
+                              <div class="field form__field">
+                                <label class="field__label" for="profile-location">
+                                  <input class="field__input" id="profile-location" type="text">
+                                  <div class="field__placeholder">Город</div>
+                                </label>
+                              </div>
+                              <div class="field form__field">
+                                <label class="field__label" for="profile-email">
+                                  <input class="field__input" id="profile-email" type="email">
+                                  <div class="field__placeholder">E-mail</div>
+                                </label>
+                              </div>
+                      </div>
+                      <div class="l-col-6_sm-12">
+                              <div class="field form__field">
+                                <label class="field__label" for="profile-password">
+                                  <input class="field__input" id="profile-password" type="password">
+                                  <div class="field__placeholder">Новый пароль</div>
+                                </label>
+                              </div>
+                              <div class="field form__field field--checkbox">
+                                <label class="field__label" for="profile-agreement-rules">
+                                  <div class="field__box">
+                                    <input class="field__input" id="profile-agreement-rules" type="checkbox" checked>
+                                    <div class="field__icon">
+                                            <svg class="icon">
+                                              <use xlink:href="#check"></use>
+                                            </svg>
+                                    </div>
+                                  </div>
+                                  <div class="field__text">Я согласен с&nbsp;условиями акции</div>
+                                </label>
+                              </div>
+                              <div class="field form__field field--checkbox">
+                                <label class="field__label" for="profile-agreement-subscribe">
+                                  <div class="field__box">
+                                    <input class="field__input" id="profile-agreement-subscribe" type="checkbox">
+                                    <div class="field__icon">
+                                            <svg class="icon">
+                                              <use xlink:href="#check"></use>
+                                            </svg>
+                                    </div>
+                                  </div>
+                                  <div class="field__text">Я согласен с&nbsp;пользовательским соглашением, на&nbsp;получение рекламной информации</div>
+                                </label>
+                              </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="tab-content" id="profile-codes">
                   <div class="profile-codes">
                     <div class="profile-codes__table table">
@@ -122,8 +184,8 @@
                               <div class="gift card">
                                 <div class="gift__content">
                                   <div class="gift__title tp-heading--medium tp-text--primary tp-text--center">Приз месяца</div>
-                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/june.png" alt="Грили&amp;#8209;барбекю"></div>
-                                  <div class="gift__name tp-body--big tp-text--center"><b>Грили&#8209;барбекю</b></div>
+                                  <div class="gift__img tp-text--center"><img src="/build/img/prizes/june.png" alt="Гриль&amp;#8209;барбекю"></div>
+                                  <div class="gift__name tp-body--big tp-text--center"><b>Гриль&#8209;барбекю</b></div>
                                 </div>
                               </div>
                       </div>

@@ -11,20 +11,23 @@
   <body>
     <div class="svg-sprite l-hidden"></div>
     <script>$('.svg-sprite').html(SVG_SPRITE);</script>
-    <div class="layout layout--desktop layout--home">
+    <div class="layout layout--home layout--loggedin">
       <!-- header-->
       <div class="header">
         <div class="l-container">
-          <div class="header__content">
-            <div class="header__logo logo logo--rockwool"><img src="/build/img/rockwool.png" alt="Rockwool"></div>
+          <div class="header__content"><a class="header__logo logo logo--rockwool" href="/"><img src="/build/img/rockwool.png" alt="Rockwool"></a>
             <div class="header__menu">
+              <div class="main-nav-btn">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
               <nav class="main-nav">
                 <ul class="main-nav__list">
                   <li class="main-nav__item"><a class="main-nav__link" href="gifts.html">призы</a></li>
                   <li class="main-nav__item"><a class="main-nav__link" href="winners.html">победители</a></li>
                   <li class="main-nav__item"><a class="main-nav__link" href="faq.html">FAQ</a></li>
-                  <li class="main-nav__item"><a class="main-nav__link disabled" href="rules.html">правила акции</a></li>
-                  <li class="main-nav__item"><a class="main-nav__link disabled" href="#">вход в&nbsp;личный кабинет</a></li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="profile.html">личный кабинет</a></li>
                 </ul>
               </nav>
             </div>
@@ -44,9 +47,46 @@
           <div class="l-container">
             <div class="code-reg__content">
               <div class="code-reg__heading tp-heading--big tp-text--primary">регистрация кода</div>
-              <div class="code-reg__text tp-body--big"><b>зарегистрируйте код, чтобы принять участие в розыгрыше призов!</b></div>
-              <div class="code-reg__btn">
-                <button class="btn btn--secondary btn--mwide">Зарегистрировать</button>
+              <div class="code-reg__form">
+                <div class="l-flex-noBottom">
+                  <div class="l-col-8_sm-12">
+                          <div class="field form__field">
+                            <label class="field__label" for="home-code-inp">
+                              <input class="field__input" id="home-code-inp" type="text">
+                              <div class="field__placeholder">Ваш код</div>
+                            </label>
+                          </div>
+                          <div class="field form__field field--checkbox">
+                            <label class="field__label" for="home-code-pers">
+                              <div class="field__box">
+                                <input class="field__input" id="home-code-pers" type="checkbox" name="home-code-check" checked>
+                                <div class="field__icon">
+                                        <svg class="icon">
+                                          <use xlink:href="#check"></use>
+                                        </svg>
+                                </div>
+                              </div>
+                              <div class="field__text">Я покупаю для себя (частник)</div>
+                            </label>
+                          </div>
+                          <div class="field form__field field--checkbox">
+                            <label class="field__label" for="home-code-pro">
+                              <div class="field__box">
+                                <input class="field__input" id="home-code-pro" type="checkbox" name="home-code-check">
+                                <div class="field__icon">
+                                        <svg class="icon">
+                                          <use xlink:href="#check"></use>
+                                        </svg>
+                                </div>
+                              </div>
+                              <div class="field__text">Я покупаю для работы (профессионал)</div>
+                            </label>
+                          </div>
+                  </div>
+                  <div class="l-col-4_sm-12">
+                    <button class="btn btn--secondary btn--block btn--mwide">Зарегистрировать</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

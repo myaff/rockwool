@@ -6,8 +6,8 @@
   box-shadow: 0 0 50px rgba(#000, 0.8);
   
   @media $mobile {
-    background: url("../img/main-mobile.png") top center no-repeat;
-    background-size: cover;
+    //background: url("../img/main-mobile.png") top center no-repeat;
+    //background-size: cover;
     
     .layout--detail & {
       box-shadow: none;
@@ -17,23 +17,32 @@
   &__content {
     padding: 12px 0;
     flexy(space-between, center);
+    @media $mobile {
+      padding: (27*100/750)vw 0;
+    }
   }
   
   &__logo {
+    flex: 0 0 auto;
     @media $desktop {
       margin-right: 100px;
+      size(170px, 30px);
+    }
+    @media $mobile {
+      size((364*100/750)vw, (66*100/750)vw);
     }
     img {
       display: block;
+      size(auto, 100%);
     }
   }
   
   &__menu {
     @media $desktop {
       flex: 1 1 510px;
-    }
-    @media $mobile {
-      display: none;
+      .layout--loggedin & {
+        flex: 0 0 510px;
+      }
     }
   }
   
@@ -75,7 +84,7 @@
       height: 78.67vw;
       
       .layout--detail & {
-        height: 60px;
+        height: (120*100/750)vw;
         padding: 0;
         z-index: 0;
         opacity: 0;
