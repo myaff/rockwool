@@ -64,3 +64,16 @@ include ../mixins
           +fieldCheckbox('personal-agreement-subscribe', 'Я согласен с&nbsp;пользовательским соглашением, на&nbsp;получение рекламной информации', 'start')
         .l-col-6_sm-12
           button.btn.btn--secondary.btn--block сохранить
+  +modal("reg-code").modal--small
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Регистрация кода
+    .modal__form
+      +fieldInput("reg-code-code", "Ваш код")(type="text")
+      button.btn.btn--secondary.btn--block Зарегистрировать
+  +modal("reg-code-confirm").modal--medium
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Ваш код успешно зарегистрирован!
+  +modal("reg-code-confirm2").modal--medium
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Ваш код успешно зарегистрирован!
+    .modal__text.tp-text--center
+      p Получите гарантированный приз в&nbsp;Личном Кабинете!
+    .modal__note.tp-text--center
+      button.btn.btn--secondary.btn--mwide получить приз
