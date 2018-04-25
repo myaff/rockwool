@@ -1,23 +1,66 @@
 include ../mixins
-// modal
-+modal()(id="modal-form", class="js-form")
-  .modal-form
-    form.modal-form__form.js-form-form
-      .modal-form__heading
-        .tp-heading--styled-2
-          .title Ваш вопрос
-          .subtitle эксперту
-      .modal-form__content
-        .form--inline
-          +fieldInput("name", "Ваше имя")(type="text", name="name", required)
-          +fieldInput("email", "E-mail")(type="email", name="email", required)
-        +fieldTextarea("message", "Вопрос")(name="message", required)
-      .modal-form__actions
-        .btn.btn--secondary.btn--big.js-form-submit отправить
-    .modal-form__result.js-form-result
-      .modal-form__heading
-        .tp-heading--styled-2
-          .title Спасибо!
-          .subtitle Ответ на&nbsp;ваш вопрос придет на&nbsp;указанный e&#8209;mail.
-      .modal-form__actions
-        .btn.btn--plain.btn-close-modal.js-close-modal Закрыть
+.modal__wrapper
+  +modal("login").modal--small
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Вход
+    .modal__form
+      +fieldInput("login-email", "E-mail")(type="email")
+      +fieldInput("login-password", "Пароль")(type="password")
+        .field__note
+          button.btn.btn--link.js-modal(data-target="#pass-recover") Забыли пароль?
+      button.btn.btn--secondary.btn--block Войти
+  +modal("pass-recover").modal--small
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Восстановление пароля
+    .modal__form
+      +fieldInput("pass-recover-email", "E-mail")(type="email")
+      button.btn.btn--secondary.btn--block Восстановить пароль
+      .modal__note
+        button.btn.btn--link.js-modal(data-target="#login") Войти
+  +modal("reg-thanks").modal--medium
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Спасибо за&nbsp;регистрацию
+  +modal("reg-confirm").modal--medium
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Спасибо! 
+    .modal__text.tp-text--center
+      p На ваш e-mail адрес отправлена ссылка для&nbsp;подтверждения регистрации
+  +modal("reg").modal--big
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center регистрация
+    .modal__form
+      .l-flex-noBottom-center
+        .l-col-6_sm-12
+          +fieldInput("reg-name", "ФИО")(type="text")
+          +fieldInput("reg-city", "Город")(type="text")
+          +fieldInput("reg-email", "E-mail")(type="email")
+        .l-col-6_sm-12
+          +fieldInput("reg-tel", " Телефон")(type="tel")
+          +fieldInput("reg-password", "Пароль")(type="password")
+          .field--inline
+            +fieldCheckbox('reg-pers', 'Я покупаю для&nbsp;себя (частник)', 'start')(checked)
+            +fieldCheckbox('reg-pro', 'Я покупаю для&nbsp;работы (профессионал)', 'start')
+        .l-col-6_sm-12
+          +fieldCheckbox('reg-agreement-rules', 'Я согласен с&nbsp;условиями акции')(checked)
+        .l-col-6_sm-12
+          +fieldCheckbox('reg-agreement-subscribe', 'Я согласен с&nbsp;пользовательским соглашением, на&nbsp;получение рекламной информации', 'start')
+        .l-col-6_sm-12
+          button.btn.btn--secondary.btn--block зарегистрироваться
+  +modal("personal").modal--big
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center Поздравляем! 
+    .modal__text.tp-text--center
+      p Вы стали победителем! Для&nbsp;получения приза необходимо заполнить анкету.
+    .modal__form
+      .l-flex-noBottom-center
+        .l-col-6_sm-12
+          +fieldInput("personal-name", "ФИО")(type="text")
+          +fieldInput("personal-birth", "Дата рождения")(type="text")
+          +fieldInput("personal-email", "E-mail")(type="email")
+          +fieldInput("personal-tel", "Телефон")(type="tel")
+          +fieldInput("personal-zip", "Индекс")(type="text")
+        .l-col-6_sm-12
+          +fieldInput("personal-region", "Регион / район")(type="text")
+          +fieldInput("personal-city", "Город / Населенный пункт")(type="text")
+          +fieldInput("personal-street", "Пароль")(type="text")
+          .field--inline
+            +fieldInput("personal-building", "Дом")(type="text")
+            +fieldInput("personal-apt", "Квартира")(type="text")
+          +fieldCheckbox('personal-agreement-rules', 'Я согласен с&nbsp;условиями акции')(checked)
+          +fieldCheckbox('personal-agreement-subscribe', 'Я согласен с&nbsp;пользовательским соглашением, на&nbsp;получение рекламной информации', 'start')
+        .l-col-6_sm-12
+          button.btn.btn--secondary.btn--block сохранить

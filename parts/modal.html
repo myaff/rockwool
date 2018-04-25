@@ -1,53 +1,306 @@
 
-<!-- modal-->
-<div class="modal js-form" id="modal-form">
-  <div class="modal__bg"></div>
-  <div class="modal__window">
-    <div class="modal__close btn btn--plain btn-close-modal js-close-modal">Закрыть</div>
-    <div class="modal__content">
-      <div class="modal-form">
-        <form class="modal-form__form js-form-form">
-          <div class="modal-form__heading">
-            <div class="tp-heading--styled-2">
-              <div class="title">Ваш вопрос</div>
-              <div class="subtitle">эксперту</div>
+<div class="modal__wrapper">
+  <div class="modal modal--small" id="login">
+    <div class="modal__close btn btn--plain btn-close-modal">
+      <svg class="icon icon--block">
+        <use xlink:href="#cross"></use>
+      </svg>
+    </div>
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__title tp-heading--big tp-text--primary tp-text--center">Вход</div>
+        <div class="modal__form">
+          <div class="field form__field">
+            <label class="field__label" for="login-email">
+              <input class="field__input" id="login-email" type="email"/>
+              <div class="field__placeholder">E-mail</div>
+            </label>
+          </div>
+          <div class="field form__field">
+            <label class="field__label" for="login-password">
+              <input class="field__input" id="login-password" type="password"/>
+              <div class="field__placeholder">Пароль</div>
+            </label>
+            <div class="field__note">
+              <button class="btn btn--link js-modal" data-target="#pass-recover">Забыли пароль?</button>
             </div>
           </div>
-          <div class="modal-form__content">
-            <div class="form--inline">
+          <button class="btn btn--secondary btn--block">Войти</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal--small" id="pass-recover">
+    <div class="modal__close btn btn--plain btn-close-modal">
+      <svg class="icon icon--block">
+        <use xlink:href="#cross"></use>
+      </svg>
+    </div>
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__title tp-heading--big tp-text--primary tp-text--center">Восстановление пароля</div>
+        <div class="modal__form">
+          <div class="field form__field">
+            <label class="field__label" for="pass-recover-email">
+              <input class="field__input" id="pass-recover-email" type="email"/>
+              <div class="field__placeholder">E-mail</div>
+            </label>
+          </div>
+          <button class="btn btn--secondary btn--block">Восстановить пароль</button>
+          <div class="modal__note">
+            <button class="btn btn--link js-modal" data-target="#login">Войти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal--medium" id="reg-thanks">
+    <div class="modal__close btn btn--plain btn-close-modal">
+      <svg class="icon icon--block">
+        <use xlink:href="#cross"></use>
+      </svg>
+    </div>
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__title tp-heading--big tp-text--primary tp-text--center">Спасибо за&nbsp;регистрацию</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal--medium" id="reg-confirm">
+    <div class="modal__close btn btn--plain btn-close-modal">
+      <svg class="icon icon--block">
+        <use xlink:href="#cross"></use>
+      </svg>
+    </div>
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__title tp-heading--big tp-text--primary tp-text--center">Спасибо! </div>
+        <div class="modal__text tp-text--center">
+          <p>На ваш e-mail адрес отправлена ссылка для&nbsp;подтверждения регистрации</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal--big" id="reg">
+    <div class="modal__close btn btn--plain btn-close-modal">
+      <svg class="icon icon--block">
+        <use xlink:href="#cross"></use>
+      </svg>
+    </div>
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__title tp-heading--big tp-text--primary tp-text--center">регистрация</div>
+        <div class="modal__form">
+          <div class="l-flex-noBottom-center">
+            <div class="l-col-6_sm-12">
               <div class="field form__field">
-                <label class="field__label" for="name">
-                  <input class="field__input" id="name" type="text" name="name" required="required"/>
-                  <div class="field__placeholder">Ваше имя</div>
+                <label class="field__label" for="reg-name">
+                  <input class="field__input" id="reg-name" type="text"/>
+                  <div class="field__placeholder">ФИО</div>
                 </label>
               </div>
               <div class="field form__field">
-                <label class="field__label" for="email">
-                  <input class="field__input" id="email" type="email" name="email" required="required"/>
+                <label class="field__label" for="reg-city">
+                  <input class="field__input" id="reg-city" type="text"/>
+                  <div class="field__placeholder">Город</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="reg-email">
+                  <input class="field__input" id="reg-email" type="email"/>
                   <div class="field__placeholder">E-mail</div>
                 </label>
               </div>
             </div>
-            <div class="field form__field">
-              <label class="field__label" for="message">
-                <textarea class="field__input" id="message" name="message" required="required"></textarea>
-                <div class="field__placeholder">Вопрос</div>
-              </label>
+            <div class="l-col-6_sm-12">
+              <div class="field form__field">
+                <label class="field__label" for="reg-tel">
+                  <input class="field__input" id="reg-tel" type="tel"/>
+                  <div class="field__placeholder"> Телефон</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="reg-password">
+                  <input class="field__input" id="reg-password" type="password"/>
+                  <div class="field__placeholder">Пароль</div>
+                </label>
+              </div>
+              <div class="field--inline">
+                <div class="field form__field field--checkbox start">
+                  <label class="field__label" for="reg-pers">
+                    <div class="field__box">
+                      <input class="field__input" id="reg-pers" type="checkbox" checked="checked"/>
+                      <div class="field__icon">
+                        <svg class="icon">
+                          <use xlink:href="#check"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="field__text">Я покупаю для&nbsp;себя (частник)</div>
+                  </label>
+                </div>
+                <div class="field form__field field--checkbox start">
+                  <label class="field__label" for="reg-pro">
+                    <div class="field__box">
+                      <input class="field__input" id="reg-pro" type="checkbox"/>
+                      <div class="field__icon">
+                        <svg class="icon">
+                          <use xlink:href="#check"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="field__text">Я покупаю для&nbsp;работы (профессионал)</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="l-col-6_sm-12">
+              <div class="field form__field field--checkbox">
+                <label class="field__label" for="reg-agreement-rules">
+                  <div class="field__box">
+                    <input class="field__input" id="reg-agreement-rules" type="checkbox" checked="checked"/>
+                    <div class="field__icon">
+                      <svg class="icon">
+                        <use xlink:href="#check"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="field__text">Я согласен с&nbsp;условиями акции</div>
+                </label>
+              </div>
+            </div>
+            <div class="l-col-6_sm-12">
+              <div class="field form__field field--checkbox start">
+                <label class="field__label" for="reg-agreement-subscribe">
+                  <div class="field__box">
+                    <input class="field__input" id="reg-agreement-subscribe" type="checkbox"/>
+                    <div class="field__icon">
+                      <svg class="icon">
+                        <use xlink:href="#check"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="field__text">Я согласен с&nbsp;пользовательским соглашением, на&nbsp;получение рекламной информации</div>
+                </label>
+              </div>
+            </div>
+            <div class="l-col-6_sm-12">
+              <button class="btn btn--secondary btn--block">зарегистрироваться</button>
             </div>
           </div>
-          <div class="modal-form__actions">
-            <div class="btn btn--secondary btn--big js-form-submit">отправить</div>
-          </div>
-        </form>
-        <div class="modal-form__result js-form-result">
-          <div class="modal-form__heading">
-            <div class="tp-heading--styled-2">
-              <div class="title">Спасибо!</div>
-              <div class="subtitle">Ответ на&nbsp;ваш вопрос придет на&nbsp;указанный e&#8209;mail.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal--big" id="personal">
+    <div class="modal__close btn btn--plain btn-close-modal">
+      <svg class="icon icon--block">
+        <use xlink:href="#cross"></use>
+      </svg>
+    </div>
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__title tp-heading--big tp-text--primary tp-text--center">Поздравляем! </div>
+        <div class="modal__text tp-text--center">
+          <p>Вы стали победителем! Для&nbsp;получения приза необходимо заполнить анкету.</p>
+        </div>
+        <div class="modal__form">
+          <div class="l-flex-noBottom-center">
+            <div class="l-col-6_sm-12">
+              <div class="field form__field">
+                <label class="field__label" for="personal-name">
+                  <input class="field__input" id="personal-name" type="text"/>
+                  <div class="field__placeholder">ФИО</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="personal-birth">
+                  <input class="field__input" id="personal-birth" type="text"/>
+                  <div class="field__placeholder">Дата рождения</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="personal-email">
+                  <input class="field__input" id="personal-email" type="email"/>
+                  <div class="field__placeholder">E-mail</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="personal-tel">
+                  <input class="field__input" id="personal-tel" type="tel"/>
+                  <div class="field__placeholder">Телефон</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="personal-zip">
+                  <input class="field__input" id="personal-zip" type="text"/>
+                  <div class="field__placeholder">Индекс</div>
+                </label>
+              </div>
             </div>
-          </div>
-          <div class="modal-form__actions">
-            <div class="btn btn--plain btn-close-modal js-close-modal">Закрыть</div>
+            <div class="l-col-6_sm-12">
+              <div class="field form__field">
+                <label class="field__label" for="personal-region">
+                  <input class="field__input" id="personal-region" type="text"/>
+                  <div class="field__placeholder">Регион / район</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="personal-city">
+                  <input class="field__input" id="personal-city" type="text"/>
+                  <div class="field__placeholder">Город / Населенный пункт</div>
+                </label>
+              </div>
+              <div class="field form__field">
+                <label class="field__label" for="personal-street">
+                  <input class="field__input" id="personal-street" type="text"/>
+                  <div class="field__placeholder">Пароль</div>
+                </label>
+              </div>
+              <div class="field--inline">
+                <div class="field form__field">
+                  <label class="field__label" for="personal-building">
+                    <input class="field__input" id="personal-building" type="text"/>
+                    <div class="field__placeholder">Дом</div>
+                  </label>
+                </div>
+                <div class="field form__field">
+                  <label class="field__label" for="personal-apt">
+                    <input class="field__input" id="personal-apt" type="text"/>
+                    <div class="field__placeholder">Квартира</div>
+                  </label>
+                </div>
+              </div>
+              <div class="field form__field field--checkbox">
+                <label class="field__label" for="personal-agreement-rules">
+                  <div class="field__box">
+                    <input class="field__input" id="personal-agreement-rules" type="checkbox" checked="checked"/>
+                    <div class="field__icon">
+                      <svg class="icon">
+                        <use xlink:href="#check"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="field__text">Я согласен с&nbsp;условиями акции</div>
+                </label>
+              </div>
+              <div class="field form__field field--checkbox start">
+                <label class="field__label" for="personal-agreement-subscribe">
+                  <div class="field__box">
+                    <input class="field__input" id="personal-agreement-subscribe" type="checkbox"/>
+                    <div class="field__icon">
+                      <svg class="icon">
+                        <use xlink:href="#check"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="field__text">Я согласен с&nbsp;пользовательским соглашением, на&nbsp;получение рекламной информации</div>
+                </label>
+              </div>
+            </div>
+            <div class="l-col-6_sm-12">
+              <button class="btn btn--secondary btn--block">сохранить</button>
+            </div>
           </div>
         </div>
       </div>

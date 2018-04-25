@@ -44,7 +44,10 @@ function init(){
   let isSmall = Main.DeviceDetection.isMobile() || Main.DeviceDetection.isTablet();
   
   // set initial state
-  checkMenu(mainMenu, !isSmall);
+  if (isSmall) {
+    checkMenu(mainMenu, !isSmall);
+  }
+  
   // set state after resize
   $(window).on('resizeend', function () {
     isSmall = Main.DeviceDetection.isMobile() || Main.DeviceDetection.isTablet();
@@ -59,8 +62,11 @@ function init(){
   
   // close by click outside
   $('.layout').on('click', function (e) {
-    if (!mainMenu.el.find(e.target).length) {
-      closeMenu(mainMenu);
+    isSmall = Main.DeviceDetection.isMobile() || Main.DeviceDetection.isTablet();
+    if (isSmall) {
+      if (!mainMenu.el.find(e.target).length) {
+        closeMenu(mainMenu);
+      }
     }
   });
   

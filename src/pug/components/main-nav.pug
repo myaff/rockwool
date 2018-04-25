@@ -1,13 +1,20 @@
+mixin getLink(page)
+  if !page.isModal
+    a.main-nav__link(href=page.url, class=page.isActive ? "" : "disabled") !{page.text}
+  else
+    a.main-nav__link.js-modal(href=page.url, class=page.isActive ? "" : "disabled", data-target=page.isModal) !{page.text}
+
 nav.main-nav
   ul.main-nav__list
     each page in pages
-      li.main-nav__item
-        a.main-nav__link(href=page.url, class=page.isActive ? "" : "disabled") !{page.text}
-    if isLoggedin
-      li.main-nav__item
-        a.main-nav__link(href="profile.html") личный кабинет
-    else
-      li.main-nav__item
-        a.main-nav__link.disabled(href="rules.html") правила акции
-      li.main-nav__item
-        a.main-nav__link(href="#") вход в&nbsp;личный кабинет
+      if !page.isDemo
+        if page.isAlways
+          li.main-nav__item
+            +getLink(page)
+        else
+          if isLoggedin && page.isLoggedin
+            li.main-nav__item
+              +getLink(page)
+          else if !isLoggedin && !page.isLoggedin
+            li.main-nav__item
+              +getLink(page)

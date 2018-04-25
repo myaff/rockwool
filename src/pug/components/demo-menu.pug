@@ -1,0 +1,8 @@
+.demo-menu
+  button.btn
+  ul.demo-menu__list
+    each item in pages
+      if item.isActive
+        if !item.isModal
+          li.demo-menu__item
+            a.demo-menu__link(href=item.url) !{item.text}

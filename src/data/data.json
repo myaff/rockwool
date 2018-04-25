@@ -3,17 +3,65 @@
   {
     "url": "gifts.html",
     "text": "призы",
-    "isActive": true
+    "isActive": true,
+    "isAlways": true,
+    "isLoggedin": true,
+    "isModal": false,
+    "isDemo": false
   },
   {
     "url": "winners.html",
     "text": "победители",
-    "isActive": true
+    "isActive": true,
+    "isAlways": true,
+    "isLoggedin": true,
+    "isModal": false,
+    "isDemo": false
   },
   {
     "url": "faq.html",
     "text": "FAQ",
-    "isActive": true
+    "isActive": true,
+    "isAlways": true,
+    "isLoggedin": true,
+    "isModal": false,
+    "isDemo": false
+  },
+  {
+    "url": "rules.html",
+    "text": "Правила акции",
+    "isActive": false,
+    "isAlways": false,
+    "isLoggedin": false,
+    "isModal": false,
+    "isDemo": false
+  },
+  {
+    "url": "profile.html",
+    "text": "Личный кабинет",
+    "isActive": true,
+    "isAlways": false,
+    "isLoggedin": true,
+    "isModal": false,
+    "isDemo": false
+  },
+  {
+    "url": "#",
+    "text": "Вход в личный кабинет",
+    "isActive": true,
+    "isAlways": false,
+    "isLoggedin": false,
+    "isModal": "#login",
+    "isDemo": false
+  },
+  {
+    "url": "modals.html",
+    "text": "Попапы",
+    "isActive": true,
+    "isAlways": false,
+    "isLoggedin": false,
+    "isModal": false,
+    "isDemo": true
   }
 ],
 "gifts": {

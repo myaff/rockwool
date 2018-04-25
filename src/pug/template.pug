@@ -1,5 +1,5 @@
 include ./mixins
-- var isLoggedin = true;
+- var isLoggedin = false;
 doctype html
 block page
   html
@@ -24,6 +24,7 @@ block page
         include parts/header
         block content
         include parts/footer
-        //- include parts/modal
+        include parts/modal
+        include components/demo-menu
       
       script(src="build/js/main.js")

@@ -88,10 +88,24 @@
     color: inherit;
   }
   
+  &--block {
+    display: block;
+    width: 100%;
+  }
+  
   &--mwide {
     @media $mobile {
       display: block;
       width: 100%;
     }
+  }
+  
+  &--link {
+    font-weight: normal;
+    font-size: inherit;
+    color: $primary;
+    text-transform: none;
+    padding: 0;
+    background: none;
   }
 }

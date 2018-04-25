@@ -1,0 +1,18 @@
+extends template
+
+prepend page
+  - var layout = 'detail';
+  - var currentPage = 'modals';
+
+block content
+  .page.page--modals
+    .modals
+      .l-container
+        .modals__heading.tp-heading--big.tp-text--center.my-6 Попапы
+        .modals__content
+          button.btn.btn--primary.js-modal.ma-3(data-target="#login") Логин
+          button.btn.btn--primary.js-modal.ma-3(data-target="#pass-recover") Восстановление пароля
+          button.btn.btn--primary.js-modal.ma-3(data-target="#reg-thanks") Спасибо за регистрацию
+          button.btn.btn--primary.js-modal.ma-3(data-target="#reg-confirm") Подтверждение регистрации
+          button.btn.btn--primary.js-modal.ma-3(data-target="#reg") Регистрация
+          button.btn.btn--primary.js-modal.ma-3(data-target="#personal") Анкета
