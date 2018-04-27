@@ -62,6 +62,10 @@ function init(){
   $('.modal').on('click', function(e) {
     e.stopPropagation();
   });
+  
+  $('.modal--video').on('opened', function(){
+    $(this).find('.js-modal-video')[0].play();
+  });
 
 }
 

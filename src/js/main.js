@@ -7,6 +7,7 @@ let Timer = require("./components/timer");
 let Accordion = require("./components/accordion");
 let Tabs = require("./components/tabs");
 let MainMenu = require("./components/main-menu");
+let Video = require("./components/video");
 
 $(document).ready(function(){
   
@@ -19,6 +20,7 @@ $(document).ready(function(){
   Accordion.init();
   Tabs.init();
   MainMenu.init();
+  Video.init();
 });
 
 
@@ -36,5 +38,6 @@ module.exports = {
   Timer,
   Accordion,
   Tabs,
-  MainMenu
+  MainMenu,
+  Video
 };

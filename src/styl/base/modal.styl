@@ -21,6 +21,9 @@
     &--big {
       max-width: 820px;
     }
+    &--large {
+      max-width: 990px;
+    }
   }
   &__wrapper {
     fixed(0px, 0px);
@@ -33,11 +36,11 @@
     }
   }
   &__close {
-    absolute(15px);
-    right: 15px;
+    absolute(0px);
+    right: 0;
     z-index: 5;
-    size(40px);
-    padding: 10px;
+    size(70px);
+    padding: 25px;
     color: $primary;
   }
   &__inner {
@@ -53,6 +56,9 @@
     padding: 80px 80px 86px;
     @media $mobile {
       padding: (120*100/750)vw (50*100/750)vw (140*100/750)vw;
+    }
+    ^[0]--video & {
+      padding: 0;
     }
   }
   &__title + div {
