@@ -8,6 +8,7 @@ let Accordion = require("./components/accordion");
 let Tabs = require("./components/tabs");
 let MainMenu = require("./components/main-menu");
 let Video = require("./components/video");
+let Test = require("./components/test");
 
 $(document).ready(function(){
   
@@ -21,6 +22,7 @@ $(document).ready(function(){
   Tabs.init();
   MainMenu.init();
   Video.init();
+  Test.init();
 });
 
 
@@ -39,5 +41,6 @@ module.exports = {
   Accordion,
   Tabs,
   MainMenu,
-  Video
+  Video,
+  Test
 };

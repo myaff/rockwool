@@ -221,9 +221,19 @@ for $key, $value in $textColorsMap {
 }
 
 ul {
-  list-style: disc;
+  list-style: none;
+  padding-left: 0;
   li {
     margin: 0.5em 0;
+    relative();
+    padding-left: 1.25rem;
+    &::before {
+      content: '';
+      display: block;
+      circle(5px);
+      absolute(0.75em, 0px);
+      background: $primary;
+    }
   }
 }
 ol {

@@ -83,3 +83,43 @@ include ../mixins
   +modal("instr").modal--large.modal--video
     .modal__video
       video.js-modal-video(src="/build/assets/videos/instruction.mp4", controls="controls")
+  +modal("test-win").modal--medium.modal--colored
+    .modal__title.tp-heading--big.tp-text--center Поздравляем! <br/>вы прошли тест
+    .modal__text.tp-text--center
+      p перейдите в&nbsp;интернет&#8209;магазин Rockwool, <br/>чтобы получить скидку
+    .modal__note.tp-text--center
+      a.btn.btn--secondary.btn--mwide(href="#") получить скидку
+  +modal("test-loose").modal--medium
+    .modal__title.tp-heading--big.tp-text--primary.tp-text--center К&nbsp;сожалению <br/>вы не&nbsp;прошли тест
+    .modal__note.tp-text--center
+      button.btn.btn--secondary.btn--mwide.test-reset попробовать снова
+  each item, index in test
+    +modal("test-" + (index + 1)).modal--big.modal--test
+      .modal__header
+        .modal__title.tp-heading--big.tp-text--center Пройдите тест <br/>и&nbsp;получите скидку
+        .modal__text.tp-text--center
+          p на&nbsp;любой продукт из&nbsp;ассортимента Rockwool
+      .modal__test
+        .test(class="test--" + (index + 1))
+          .test__test
+            .test__q
+              .test__q-num= (index + 1)
+              .test__q-text !{item.q}
+            .test__v
+              each a in item.a
+                .test__a.test-ctrl(data-correct=a.isCorrect ? "true" : "")
+                  .test__a-icon
+                    +icon("smile")
+                  .test__a-text !{a.text}
+                  if a.isCorrect
+                    .test__a-correct-note Правильный ответ
+                    .test__a-label.correct вы правы
+                    .test__a-label.error вы не правы
+          .test-content
+            .test__content
+              .test__content-imgs
+                each pic, index in item.images
+                  .test-img(class="test-img--" + (index + 1)): img(src=pic)
+              .test__content-text !{item.text}
+          .test__btn.tp-text--center
+            button.btn.btn--secondary.btn--mwide.js-modal.test-next(data-target=(index + 1) == test.length ? "result" : "#test-" + (index + 2)) Далее

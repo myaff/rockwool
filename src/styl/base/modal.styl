@@ -25,6 +25,14 @@
       max-width: 990px;
     }
   }
+  &--colored {
+    background: url('../img/modal-bg.png') center no-repeat;
+    background-size: cover;
+    color: $white;
+  }
+  &--colored &__close {
+    color: $white;
+  }
   &__wrapper {
     fixed(0px, 0px);
     size(100vw, 100%);
@@ -42,6 +50,10 @@
     size(70px);
     padding: 25px;
     color: $primary;
+    @media $mobile {
+      size((140*100/750)vw);
+      padding: (50*100/750)vw;
+    }
   }
   &__inner {
     @media $desktop {
@@ -90,6 +102,33 @@
     @media $mobile {
       font-size: (36*100/750)vw;
     }
+  }
+  
+  // test
+  
+  &--test &__header {
+    background: url('../img/modal-header-bg.png') center no-repeat;
+    background-size: cover;
+    color: $white;
+    padding: 2rem;
+    @media $mobile {
+      background: url('../img/modal-header-bg-mobile.png') center no-repeat;
+      background-size: cover;
+      padding: (120*100/750)vw (50*100/750)vw (50*100/750)vw;
+    }
+  }
+  &--test &__close {
+    background: $primary;
+    color: $white;
+    @media $mobile {
+      background: transparent;
+    }
+  }
+  &--test &__content {
+    padding: 0;
+  }
+  &--test &__header &__text {
+    margin-bottom: 0;
   }
 }
 

@@ -1,0 +1,323 @@
+.test {
+  &-ctrl {
+    cursor: pointer;
+    ^[0].done & {
+      cursor: default;
+    }
+    &.inactive {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+  &-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s 0.5s;
+    
+    &.active {
+      opacity: 1;
+    }
+  }
+  &__test {
+    padding: 30px 85px 0;
+    z-index: 2;
+    
+    @media $mobile {
+      padding: (50*100/750)vw 0 0;
+    }
+    
+    ^[0].done & {
+      padding-top: 70px;
+      @media $mobile {
+        padding-top: (150*100/750)vw;
+      }
+    }
+  }
+  &__q {
+    flexy(flex-start, center);
+    &-num {
+      flex: 0 0 75px;
+      text-align: center;
+      margin-right: 20px;
+      font: bold 80px/1 $font-base;
+      color: $secondary;
+      @media $mobile {
+        font-size: (120*100/750)vw;
+        margin-right: 0;
+        flex-basis: (170*100/750)vw;
+      }
+    }
+    &-text {
+      font: bold 20px/1.2 $font-base;
+      @media $mobile {
+        font-size: (36*100/750)vw;
+      }
+    }
+  }
+  &__b {
+    width: 100vw;
+    left: calc((100vw - 100%) / -2);
+    right: calc((100vw - 100%) / -2);
+  }
+  &__a {
+    flexy(flex-start, center);
+    padding: 1rem;
+    background: $white;
+    box-shadow: 0 2px 20px 0 rgba(#000, 0.15);
+    margin-top: 30px;
+    @media $mobile {
+      padding: (30*100/750)vw (50*100/750)vw;
+      margin-top: (50*100/750)vw;
+    }
+    &-icon {
+      flex: 0 0 60px;
+      circle(60px, 50%);
+      flexy(center, center);
+      margin-right: 1.25rem;
+      background: #f0f0f0;
+      font-size: 2rem;
+      color: transparent;
+      transition: background 0.3s, color 0.3s;
+      @media $mobile {
+        flex-basis: (80*100/750)vw;
+        size((80*100/750)vw);
+        font-size: (45*100/750)vw;
+      }
+    }
+    &-text {
+      @media $mobile {
+        font-size: (36*100/750)vw;
+      }
+    }
+    &-label {
+      absolute(0px);
+      right: 0;
+      transform: translateY(-50%);
+      color: $white;
+      font: bold 18px/1 $font-base;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 6px 25px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      @media $mobile {
+        font-size: (25*100/750)vw;
+        padding: (10*100/750)vw (40*100/750)vw;
+      }
+      
+      &.correct {
+        background: $secondary;
+      }
+      &.error {
+        background: $primary;
+      }
+    }
+    &-correct-note {
+      absolute(12px, 96px);
+      font: 1rem/1 $font-base;
+      color: $secondary;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &.is-correct &-label.correct {
+      opacity: 1;
+    }
+    &.is-correct &-icon {
+      background: $secondary;
+      color: $white;
+    }
+    &.is-error &-label.error {
+      opacity: 1;
+    }
+    &.is-error &-icon {
+      background: #a3a3a3;
+      color: $white;
+    }
+    &.is-error &-text {
+      color: #a3a3a3;
+    }
+    &.is-error &-correct-note {
+      opacity: 1;
+    }
+  }
+  
+  &__btn {
+    padding: 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    
+    @media $mobile {
+      padding: (30*100/750)vw (50*100/750)vw (60*100/750)vw;
+    }
+    
+    ^[0].done & {
+      opacity: 1;
+      pointer-events: initial;
+    }
+    
+    .btn {
+      min-width: 200px;
+    }
+  }
+  
+  &__content {
+    background: #eaeaea;
+    @media $desktop {
+      flexy(flext-start, stretch);
+      margin-top: -45px;
+    }
+    &-imgs {
+      flex: 0 0 280px;
+      width: 280px;
+      background: #f1f1f1;
+      @media $mobile {
+        width: 100%;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+    &-text {
+      flex: 0 0 540px;
+      padding: 60px 30px 20px;
+      @media $mobile {
+        padding: (50*100/750)vw (60*100/750)vw;
+      }
+      
+      p {
+        font-size: 1rem;
+        line-height: 1.13;
+        @media $mobile {
+          font-size: (30*100/750)vw;
+        }
+      }
+      ul, ol {
+        @media $mobile {
+          font-size: (30*100/750)vw;
+        }
+      }
+    }
+  }
+}
+
+.test {
+  &--1 &__content {
+    &-imgs {
+      flexy(flex-start, flex-start, column, nowrap);
+      @media $mobile {
+        flex-direction: row;
+      }
+    }
+    .test-img {
+      flex: 0 0 50%;
+      size(100%, 50%);
+      overflow: hidden;
+      
+      @media $mobile {
+        size(50%, 100%);
+      }
+      
+      img {
+        min-height: 100%;
+        object-fit: cover;
+        @media $mobile {
+          min-height: (460*100/750)vw;
+        }
+      }
+    }
+    .test-img--1 {
+      order: 2;
+    }
+  }
+  &--2 &__content {
+    .test-img {
+      height: 100%;
+      overflow: hidden;
+      @media $mobile {
+        width: 100%;
+      }
+      img {
+        object-fit: cover;
+        min-height: 100%;
+        @media $mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &--3 &__content {
+    &-imgs {
+      padding: 70px 30px 18px 85px;
+      @media $mobile {
+        padding: (60*100/750)vw (50*100/750)vw;
+        flexy(space-between, center);
+      }
+    }
+    .test-img {
+      @media $desktop {
+        width: 116px;
+        margin-bottom: 12px;
+      }
+      @media $mobile {
+        width: (180*100/750)vw;
+      }
+    }
+  }
+  &--4 &__content {
+    &-imgs {
+      padding: 70px 30px 30px;
+      @media $mobile {
+        padding: (40*100/750)vw (50*100/750)vw;
+      }
+    }
+    .test-img {
+      width: 100%;
+      @media $mobile {
+        width: (460*100/750)vw;
+        margin: 0 auto;
+      }
+    }
+  }
+  &--5 &__content {
+    &-imgs {
+      flexy(flex-start, flex-start, column, nowrap);
+      @media $mobile {
+        flex-direction: row;
+      }
+    }
+    .test-img {
+      width: 100%;
+      overflow: hidden;
+      
+      img {
+        min-height: 100%;
+        object-fit: cover;
+      }
+      
+      &--1 {
+        flex: 0 0 56%;
+        height: 225px;
+        @media $mobile {
+          flex-basis: 38.67%;
+          height: (320*100/750)vw;
+          order: 2;
+        }
+      }
+      &--2 {
+        flex: 0 0 44%;
+        height: 44%;
+        @media $mobile {
+          flex-basis: 61.33%;
+          height: (320*100/750)vw;
+        }
+        @media $desktop {
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
