@@ -1,6 +1,6 @@
 let breakpoints = {
   sm: 767,
-  md: 1024,
+  md: 990,
   lg: 1280,
   xl: 1600
 };
